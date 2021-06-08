@@ -1,0 +1,47 @@
+#  L’indice réduit des stratégies de survie (rCSI)
+
+## Références / Ressources
+
+https://docs.wfp.org/api/documents/WFP-0000107746/download/
+
+*ci-dessus est l'ancienne version du manuel CARI mais la section rCSI est toujours valable*
+
+## Questionnaire standardisé
+
+Nom de la variable  | Etiquette des questions
+---- | ------------- 
+rCSILessQlty | Au cours des 7 derniers jours, combien de jours votre ménage a-t-il dû *consommer des aliments moins préférés et moins chers* parce que vous n'aviez pas assez de nourriture ou de l'argent pour acheter de la nourriture ?
+rCSIBorrow | Au cours des 7 derniers jours, combien de jours votre ménage a-t-il dû *emprunter de la nourriture ou compter sur l’aide des parents/amis* parce que vous n'aviez pas assez de nourriture ou de l'argent pour acheter de la nourriture ?
+rCSIMealSize | Au cours des 7 derniers jours, combien de jours votre ménage a-t-il dû *diminuer la quantité consommée pendant les repas* parce que vous n'aviez pas assez de nourriture ou de l'argent pour acheter de la nourriture ?
+rCSIMealAdult  | Au cours des 7 derniers jours, combien de jours votre ménage a-t-il dû *restreindre la consommation des adultes  pour nourrir les enfants* parce que vous n'aviez pas assez de nourriture ou de l'argent pour acheter de la nourriture ?
+rCSIMealNb | Au cours des 7 derniers jours, combien de jours votre ménage a-t-il dû *diminuer le nombre de repas par jour* parce que vous n'aviez pas assez de nourriture ou de l'argent pour acheter de la nourriture ?
+
+### Version papier du questionnaire
+
+Voici le module standardisé en format Word :
+[RBDstandardized_questionnairerCSI](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI.docx?raw=true) 
+
+### Version électronique du questionnaire
+
+Voici le module standardisé en format xlsform :
+[RBDstandardized_questionnairerCSI](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI.xlsx?raw=true) 
+
+
+## Calcul de l'indicateur rCSI
+
+### Exemple d'ensemble de données
+
+Voici l'exemple d'un ensemble de données brutes :  
+[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
+
+### SPSS Syntax
+
+Voici le fichier de syntaxe SPSS : 
+[RBDstandardized_SPSSsyntaxrCSI_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_SPSSsyntaxrCSI_FR.sps) 
+
+
+### R Syntax
+
+Voici le fichier de syntaxe R : 
+[RBDstandardized_RsyntaxrCSI_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxrCSI_FR.R) 
+

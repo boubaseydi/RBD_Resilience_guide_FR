@@ -1,0 +1,45 @@
+# L'échelle de la faim dans les ménages (HHS)
+
+## Références / Ressources
+
+https://www.fantaproject.org/sites/default/files/resources/HHS-Indicator-Guide-Aug2011-FRANCAIS.pdf
+
+
+## Questionnaire standardisé
+
+Nom de la variable | Etiquette des questions | Choix des réponses
+---- | ------------- |------
+HHhSNoFood_YN | Au cours des [4 dernières semaines/30 jours], n'y avait-il aucun aliment à manger à la maison, de quelque nature que ce soit à cause du manque de ressources ? | 1) Oui 0) Non
+HHhSNoFood_FR | Combien de fois est-ce arrivé au cours des [4 dernières semaines/30 jours] ? | 1) Rarely (1–2 times) 2) Parfois (3 à 10 fois)  3) Souvent (plus que 10 fois)
+HHhSBedHung_YN | Au cours des [4 dernières semaines/30 jours], étiez-vous ou tout membre de votre ménage obligé de dormir affamé le soir parce qu’il n’y avait pas assez de nourriture ?  | 1) Oui 0) Non
+HHhSBedHung_FR  | Combien de fois est-ce arrivé au cours des [4 dernières semaines/30 jours] ? | 1) Rarely (1–2 times) 2) Parfois (3 à 10 fois)  3) Souvent (plus que 10 fois)
+HHhSNotEat_YN | Au cours des [4 dernières semaines/30 jours], avez-vous ou tout membre de votre ménage passé un jour et une nuit entière sans rien manger parce qu’il n’y avait pas assez de nourriture ?
+HHhSNotEat_FR | Combien de fois est-ce arrivé au cours des [4 dernières semaines/30 jours] ? | 1) Rarely (1–2 times) 2) Parfois (3 à 10 fois)  3) Souvent (plus que 10 fois)
+
+### Version papier du questionnaire
+
+Voici le module standardisé en format Word :
+[RBDstandardized_questionnaireHHS](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireHHS.docx?raw=true) 
+
+### Version électronique du questionnaire
+
+Voici le module standardisé en format xlsform :
+[RBDstandardized_questionnaireHHS](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireHHS.xlsx?raw=true) 
+
+
+## Calcul de l'indicateur HHS
+
+### Exemple d'ensemble de données
+
+Voici l'exemple d'un ensemble de données brutes :  
+[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true) 
+
+### SPSS Syntax
+
+Voici le fichier de syntaxe SPSS : 
+[RBDstandardized_SPSSsyntaxHHS_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_SPSSsyntaxHHS_FR.sps) 
+
+### R Syntax
+
+Voici le fichier de syntaxe R :  
+[RBDstandardized_RsyntaxHHS_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxHHS_FR.R) 

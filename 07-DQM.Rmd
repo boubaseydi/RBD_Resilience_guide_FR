@@ -1,0 +1,72 @@
+# Rapport de contrôle de la qualité des données
+
+Si les équipes d'enquête collectent des données avec Kobo/Ona/MoDa/ODK et envoient régulièrement des soumissions à un serveur, alors les analystes peuvent rapidement générer un rapport sur la qualité des données avec Rmarkdown pour suivre régulièrement les résultats des enquêtes et détecter les problèmes qui peuvent survenir sur le terrain lors de la collecte des données.
+
+L'exemple de rapport ci-dessous a été généralisé pour visualiser la progression des enquêtes par zones géographiques et les résultats calculés des indicateurs clés de la CH par zones géographiques et par les recenseurs en utilisant l'ensemble de données brutes téléchargées du serveur Kobo/Ona/MoDa/ODK.
+
+Pour des raisons de confidentialité et de sécurité des données, le code du recenseur doit être utilisé plutôt que le nom du recenseur.  Si un opérateur particulier doit être identifié ou contacté - vous pouvez vous référer au formulaire de collecte des données pour faire correspondre le code de l'énumérateur avec le nom de l'énumérateur. 
+
+
+## Aperçu des étapes
+
+Télécharger une version .sav (spss) de l'ensemble de données à partir de Kobo/Ona/MoDa/ODK - utiliser [exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav) as an example.
+
+Créez un dossier sur votre machine ("C :" est recommandé mais pas obligatoire) avec le nom de l'enquête (par exemple NGA_022021_EFSA) et créez un sous-dossier "1_RawData" et enregistrez votre ensemble de données SPSS dans le dossier "1_RawData".
+
+Ouvrez  [example_dqmonitoring_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/example_dqmonitoring_FR.Rmd) 
+et vérifier que le code (ci-dessous) fait référence au nom correct du fichier et à l'emplacement du dossier.
+
+```{r, eval = F}
+#set working directory 
+setwd("C:/exampledataquality_FR")
+
+#import dataset and call it "dataset"
+dataset <- read_sav("1_RawData/exampledataFrancais_raw.sav")
+```
+
+En outre, si le nom de la variable des enquêteurs n'est pas "EnumName", insérez le code suivant pour renommer la variable
+
+```{r, eval = F}
+#standardized enumerator name variable
+dataset <- dataset %>% rename(EnumName = OLDNAMEOFENUMERATORVARIABLE) 
+```
+
+Pour les calculs des groupes de consommation alimentaire - modifier le code pour utiliser "FCSCat21" pour les seuils 21/35 ou "FCSCat28" pour les seuils 28/42, selon le cas.
+
+
+Modifiez le `title` and `author` 
+
+```{r, eval = F}
+title: "Exemple de rapport de contrôle de la qualité des données"
+author: "PAM et partenaires"
+```
+
+Cliquez sur le bouton `Knit` et le rapport devrait se générer (cela peut prendre quelques minutes). 
+
+
+Un fichier .html est produit dans le dossier de l'enquête - vous pouvez passer le curseur sur les chiffres pour obtenir plus d'informations.
+
+### Exemple de vidéo  
+
+<iframe width="750" height="400" src="https://www.youtube.com/embed/-hvUzqojk9c" frameborder="0" allowfullscreen></iframe>
+
+*cette vidéo concerne la version anglaise, une version française sera créée mais nous espérons qu'elle illustre les informations essentielles*
+
+## Outils de contrôle de la qualité des données
+
+### Exemple d'ensemble de données et syntaxe
+
+Voici le fichier zippé avec l'exemple de données brutes et la syntaxe :
+
+[exampledq_monitoring_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/exampledq_monitoring_FR.zip?raw=true) 
+
+
+## Dépannage et aller plus loin
+
+Ce rapport a été conçu pour fonctionner avec des noms de variables et des indicateurs normalisés illustrés plus haut dans ce guide. Si les noms des variables dans l'ensemble de données brutes ne correspondent pas au code, il faudra procéder à un ajustement.
+
+Les utilisateurs R expérimentés sont libres de modifier le rapport pour répondre à leurs besoins spécifiques.  Partagez ce que vous créez !  
+
+
+
+
