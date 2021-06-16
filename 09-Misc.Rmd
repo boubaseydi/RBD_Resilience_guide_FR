@@ -1,13 +1,12 @@
-# Other Indcators/Modules
+# Miscellaneous Variables
 
 ``` {r, echo = FALSE}
 knitr::include_graphics(rep("images/construction.png"))
 ```
 
-
+ 
 
 ## Références / Ressources
-
 
 
 ## Part des dépenses alimentaires

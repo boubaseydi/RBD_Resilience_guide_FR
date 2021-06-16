@@ -1,13 +1,30 @@
 # Minimum Acceptable Diet (MAD)
-Les ressources suivantes illustrent comment collecter et calculer la version légère CARI du module Stratégie d'adaptation aux moyens d'existence.
 
-Les utilisateurs peuvent substituer les stratégies d'adaptation au stress, aux crises et aux situations d'urgence en fonction de leur contexte, de préférence à partir de la liste standard de stratégies de la page 47 du manuel CARI (ci-dessous). 
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
+
+
+
+This document contains the minimum elements required to collect data for the SPR
+indicator “Minimum Acceptable Diet”. Minimum Acceptable Diet (MAD) is part of the compendium of
+indicators used internationally to measure Infant and Young Child Feeding (IYCF) Practices, developed
+and recommended by UNICEF and WHO. It is an indicator widely used in health and nutrition surveys to
+identify the proportion of children (aged 6 to 23 months) who consumed a minimum acceptable diet.
+
 
 ## Références / Ressources
 
-1.  CARI Manual - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp271449.pdf
 
-2.  ENA Guidelines - https://docs.wfp.org/api/documents/WFP-0000074197/download/
+1.  Directives originales de la WHO sur le MAD - https://apps.who.int/iris/bitstream/handle/10665/43895/9789241596664_eng.pdf;jsessionid=E660F20E00715420079DE50405169B32?sequence=2
+
+https://www.who.int/publications/i/item/9789240018389
+
+
+2.  Directives du PAM pour MAD - https://docustore.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp279113.pdf
+
+https://docustore.wfp.org/stellent/groups/public/documents/communications/wfp264598.pdf
+
 
 *Les versions actualisées des références ne sont pas encore disponibles en français*
 

@@ -1,8 +1,9 @@
-# Part des dépenses alimentaires CARI (module léger)
+# Part des dépenses alimentaires CARI 
 
-Les ressources suivantes illustrent comment collecter et calculer la version légère CARI du module Stratégie d'adaptation aux moyens d'existence.
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
 
-Les utilisateurs peuvent substituer les stratégies d'adaptation au stress, aux crises et aux situations d'urgence en fonction de leur contexte, de préférence à partir de la liste standard de stratégies de la page 47 du manuel CARI (ci-dessous). 
 
 ## Références / Ressources
 
@@ -17,16 +18,6 @@ Les utilisateurs peuvent substituer les stratégies d'adaptation au stress, aux 
 
 Nom de la variable | Etiquette des questions | Choix des réponses
 ---- | ------------- |------- 
-LhCSIStress1 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *vendre des actifs/biens non productifs du ménage (radio, meuble, réfrigérateur, télévision, bijoux etc.)* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIStress2 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Vendre plus d’animaux (non-productifs) que d’habitude* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ?  | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIStress3 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Dépenser l’épargne* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIStress4 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Emprunter de l’argent / nourriture auprès d’un prêteur formel /banque* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSICrisis1 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Réduire les dépenses non alimentaires essentielles telles que l’éducation, la santé (dont de médicaments)* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSICrisis2 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Vendre des biens productifs ou des moyens de transport (machine à coudre, brouette, vélo, car, etc.)* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSICrisis3 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Retirer les enfants de l’école* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIEmergency1 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Vendre la maison ou du terrain* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIEmergency2 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Mendier* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
-LhCSIEmergency3 | Au cours des 30 derniers jours, est ce qu’ un membre de votre ménage a du *Vendre les derniers animaux femelles* en raison d'un manque de nourriture ou d'argent pour acheter de la nourriture ? | 1) Non, je n'ai pas été confronté à une insuffisance de nourriture 2) Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas continuer à le faire 3)  Oui 4) Non applicable
 
 ### Version papier du questionnaire
 
