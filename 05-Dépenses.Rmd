@@ -9,7 +9,6 @@ knitr::include_graphics(rep("images/construction.png"))
 
 1.  CARI Manual - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp271449.pdf
 
-2.  ENA Guidelines - https://docs.wfp.org/api/documents/WFP-0000074197/download/
 
 *Les versions actualisées des références ne sont pas encore disponibles en français*
 
@@ -23,16 +22,16 @@ Nom de la variable | Etiquette des questions | Choix des réponses
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaireLHCS_CARI](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireLHCS_CARI.docx?raw=true) 
+[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaireLHCS_CARI](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireLHCS_CARI.xlsx?raw=true) 
+[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp.xlsx?raw=true) 
 
 
-## Calcul de indicateur LHCS
+## Calcul de indicateur food expenditures
 
 ### Example data set
 
@@ -54,19 +53,3 @@ Voici le fichier de syntaxe SPSS :
 
 ## Module standardisé de stratégie d'adaptation aux moyens d'existence de l'ENA
 
-### Version papier du questionnaire
-
-Voici le module standardisé en format Word :
-
-[RBDstandardized_questionnaireLHCS_ENA](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireLHCS_ENA.docx?raw=true) 
-
-### Version électronique du questionnaire
-
-Voici le module standardisé sous xlsform :
-
-[RBDstandardized_questionnaireLHCS_ENA](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireLHCS_ENA.xlsx?raw=true) 
-
-
-### Exemple de données et de syntaxe
-
-Des exemples de données et de syntaxe pour la version ENA des stratégies d'adaptation des moyens de subsistance sont à venir.
