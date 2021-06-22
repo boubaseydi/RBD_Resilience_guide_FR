@@ -45,7 +45,6 @@ spss-syntax-2
 r-syntax-2
 part-des-dépenses-alimentaires-cari
 références-ressources-3
-part-des-dépenses-alimentaires
 version-papier-du-questionnaire-3
 version-électronique-du-questionnaire-3
 calcul-de-indicateur-food-expenditures

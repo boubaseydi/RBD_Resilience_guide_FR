@@ -1,34 +1,24 @@
 # Part des dépenses alimentaires CARI 
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
-
-
 ## Références / Ressources
 
 1.  CARI Manual - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp271449.pdf
 
-
 *Les versions actualisées des références ne sont pas encore disponibles en français*
 
-
-## Part des dépenses alimentaires
-
-Nom de la variable | Etiquette des questions | Choix des réponses
----- | ------------- |------- 
+Des groupes/éléments alimentaires et non alimentaires peuvent être ajoutés au questionnaire ci-dessous en fonction du contexte.  L'utilisation de la structure de dénomination des variables permettra un calcul rapide et une comparabilité.
 
 ### Version papier du questionnaire
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp.xlsx?raw=true) 
+[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp.xlsx?raw=true) 
+[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
 
 
 ## Calcul de indicateur food expenditures
