@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Gecodes | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience</title>
-  <meta name="description" content="Chapter 3 Gecodes | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
+  <title>Chapter 8 Diversite Alimentaire des Femmes (MDD-W) | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience</title>
+  <meta name="description" content="Chapter 8 Diversite Alimentaire des Femmes (MDD-W) | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Gecodes | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
+  <meta property="og:title" content="Chapter 8 Diversite Alimentaire des Femmes (MDD-W) | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Gecodes | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
+  <meta name="twitter:title" content="Chapter 8 Diversite Alimentaire des Femmes (MDD-W) | Guide pour la collecte, le traitement et le rapport standardisés des indicateurs clés de résilience" />
   
   
   
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="mise-en-place-de-la-r-rstudio.html"/>
-<link rel="next" href="lindice-réduit-des-stratégies-de-survie-rcsi.html"/>
+<link rel="prev" href="part-des-dépenses-alimentaires-cari.html"/>
+<link rel="next" href="minimum-acceptable-diet-mad.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -273,161 +273,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gecodes" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Gecodes</h1>
-<p>Les noms des zones géographiques, bien qu’ils soient assez simples à mettre dans un outil de collecte de données, nécessitent souvent un certain travail de traitement pour que les résultats correspondent aux fichiers SIG. Il est très fréquent qu’il y ait des problèmes et des confusions concernant l’orthographe, les translittérations, les noms alternatifs et les doublons des zones géographiques.</p>
-<p>L’utilisation de codes géographiques normalisés plutôt que de noms géographiques permet de surmonter certains de ces défis typiques du traitement de l’information géographique.</p>
-<p>Ce guide recommande d’utiliser les géocodes et les noms des ensembles de Common Operational Datasets (COD) de l’OCHA :</p>
-<p><a href="https://data.humdata.org/dataset/west-and-central-africa-administrative-boundaries-levels" class="uri">https://data.humdata.org/dataset/west-and-central-africa-administrative-boundaries-levels</a></p>
-<div id="un-exemple-simple-du-problème" class="section level2">
-<h2><span class="header-section-number">3.1</span> Un exemple simple du problème :</h2>
-<p>Les variables géographiques de la section <em>choices</em> d’un xlsform ressemblent généralement à ceci. Les valeurs de <em>name</em> sont généralement attribuées de manière séquentielle.</p>
-<table>
-<thead>
-<tr class="header">
-<th>list_name</th>
-<th>name</th>
-<th>label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cod_lga</td>
-<td>1</td>
-<td>ASKIRA/UBA</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>2</td>
-<td>BAYO</td>
-</tr>
-<tr class="odd">
-<td>cod_lga</td>
-<td>3</td>
-<td>CHIBOK</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>4</td>
-<td>KALABAGE</td>
-</tr>
-</tbody>
-</table>
-<p>Les variables géographiques dans un ensemble de données SIG correspondant ressemblent à ceci :</p>
-<table>
-<thead>
-<tr class="header">
-<th>Shape</th>
-<th>admin2Pcode</th>
-<th>admin2RefName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Polygon</td>
-<td>NG008002</td>
-<td>Askira/Uba</td>
-</tr>
-<tr class="even">
-<td>Polygon</td>
-<td>NG008004</td>
-<td>Bayo</td>
-</tr>
-<tr class="odd">
-<td>Polygon</td>
-<td>NG008006</td>
-<td>Chibok</td>
-</tr>
-<tr class="even">
-<td>Polygon</td>
-<td>NG008015</td>
-<td>Kala/Balge</td>
-</tr>
-</tbody>
-</table>
-<p>Malheureusement, si nous essayions de fusionner l’ensemble de données et le fichier SIG par le nom de la zone (il semble que ce soit la variable à laquelle se joindre), nous devrions d’abord fixer la capitalisation et la ponctuation des noms. Pour éviter tout ce travail, nous recommandons de mettre le <em>Pcode</em> dans la colonne des noms du formulaire xls.</p>
-<table>
-<thead>
-<tr class="header">
-<th>list_name</th>
-<th>name</th>
-<th>label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cod_lga</td>
-<td>NG008002</td>
-<td>ASKIRA/UBA</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>NG008004</td>
-<td>BAYO</td>
-</tr>
-<tr class="odd">
-<td>cod_lga</td>
-<td>NG008006</td>
-<td>CHIBOK</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>NG008015</td>
-<td>KALABAGE</td>
-</tr>
-</tbody>
-</table>
-<p>Mieux encore, utilisez également des noms et des labels standardisés.</p>
-<table>
-<thead>
-<tr class="header">
-<th>list_name</th>
-<th>name</th>
-<th>label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cod_lga</td>
-<td>NG008002</td>
-<td>Askira/Uba</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>NG008004</td>
-<td>Bayo</td>
-</tr>
-<tr class="odd">
-<td>cod_lga</td>
-<td>NG008006</td>
-<td>Chibok</td>
-</tr>
-<tr class="even">
-<td>cod_lga</td>
-<td>NG008015</td>
-<td>Kala/Balge</td>
-</tr>
-</tbody>
-</table>
-<p>Grâce à une variable simple et commune permettant de fusionner les deux ensembles de données, la cartographie et le traitement des données peuvent devenir plus rapides et plus faciles.</p>
-</div>
-<div id="où-trouver-les-codes-pcodes-et-plus-de-détails" class="section level2">
-<h2><span class="header-section-number">3.2</span> Où trouver les codes Pcodes et plus de détails</h2>
-<p>Les données géographiques pour l’Afrique occidentale et centrale sont disponibles à l’adresse suivante <a href="https://data.humdata.org/dataset/west-and-central-africa-administrative-boundaries-levels" class="uri">https://data.humdata.org/dataset/west-and-central-africa-administrative-boundaries-levels</a> ou les utilisateurs peuvent rechercher les informations sur le pays dans <a href="https://data.humdata.org/dashboards/cod" class="uri">https://data.humdata.org/dashboards/cod</a></p>
-<p>Nous recommandons d’utiliser les codes des colonnes <em>admin1Pcode</em> et <em>admin2Pcode</em> dans la colonne <em>nom</em> du formulaire xlsform. Il est également recommandé d’utiliser les codes des colonnes <em>admin1RefName</em> et <em>admin2RefName</em> dans la colonne <em>label</em> du formulaire xlsform.</p>
-</div>
-<div id="exemple-densemble-de-données-de-la-fiche-de-collecte-de-données-pour-le-nigeria" class="section level2">
-<h2><span class="header-section-number">3.3</span> Exemple d’ensemble de données de la fiche de collecte de données pour le Nigeria :</h2>
-<p>Voici un exemple d’ensemble de données dont les noms et les étiquettes correspondent aux Common Operation Datasets.</p>
-<p><a href="https://github.com/WFP-VAM/RBD_FS_CH_guide_EN/blob/main/questionnaires/xlsformwithgeocodesexample.xlsx?raw=true">xlsformwithgeocodesexample</a></p>
-</div>
-<div id="notes" class="section level2">
-<h2><span class="header-section-number">3.4</span> 2 Notes</h2>
+<div id="diversite-alimentaire-des-femmes-mdd-w" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Diversite Alimentaire des Femmes (MDD-W)</h1>
+<p>Les ressources suivantes illustrent comment collecter et calculer la MDD-W</p>
+<div id="références-ressources-4" class="section level2">
+<h2><span class="header-section-number">8.1</span> Références / Ressources</h2>
 <ol style="list-style-type: decimal">
-<li><p>Dans quelques pays, les limites des COD peuvent ne pas correspondre aux limites utilisées par le pays. Dans ce cas, il faudra élaborer un fichier de limites et des codes SIG spécifiques.</p></li>
-<li><p>L’insertion des pcodes pertinents dans la colonne <em>nom</em> d’un formulaire xls existant nécessitera probablement un travail de recherche sur excel <em>vlookup</em>. Cela peut être relativement simple si l’on ne remplace les codes qu’au niveau admin1 et admin2, mais les choses peuvent se compliquer si l’on utilise des colonnes en cascade et l’option <em>choice_filter</em> au niveau adm3, adm4.</p></li>
+<li><p>Directives originales de la FAO sur le MDD-W : <a href="http://www.fao.org/3/i5486e/i5486e.pdf" class="uri">http://www.fao.org/3/i5486e/i5486e.pdf</a></p></li>
+<li><p>Directives du PAM pour MDD-W : <a href="https://newgo.wfp.org/documents/minimum-dietary-diversity-for-women-mdd-w-guidance-document" class="uri">https://newgo.wfp.org/documents/minimum-dietary-diversity-for-women-mdd-w-guidance-document</a></p></li>
 </ol>
+<p><em>Les versions actualisées des références ne sont pas encore disponibles en français</em></p>
+<div id="version-papier-du-questionnaire-4" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Version papier du questionnaire</h3>
+<p>Voici le module standardisé en format Word :</p>
+<p><a href="https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_MDDW_FR.docx?raw=true">RBDstandardized_questionnaire_MDDW_FR</a></p>
+</div>
+<div id="version-électronique-du-questionnaire-4" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Version électronique du questionnaire</h3>
+<p>Voici le module standardisé sous xlsform :</p>
+<p><a href="https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireMDDW_FR.xlsx?raw=true">RBDstandardized_questionnaireMDDW_FR</a></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -435,8 +301,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="mise-en-place-de-la-r-rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lindice-réduit-des-stratégies-de-survie-rcsi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="part-des-dépenses-alimentaires-cari.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="minimum-acceptable-diet-mad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -467,7 +333,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Geocodes.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-MDDW.Rmd",
 "text": "Edit"
 },
 "history": {

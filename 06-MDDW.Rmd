@@ -1,39 +1,27 @@
-# Minimum Dietary Diversity (MDD-W)
+# Diversite Alimentaire des Femmes (MDD-W)
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
-
-
-Les ressources suivantes illustrent comment collecter et calculer la MDDW
+Les ressources suivantes illustrent comment collecter et calculer la MDD-W
 
 ## Références / Ressources
 
-1.  Directives originales de la FAO sur le MDD-W - http://www.fao.org/3/i5486e/i5486e.pdf
+1.  Directives originales de la FAO sur le MDD-W : http://www.fao.org/3/i5486e/i5486e.pdf
 
-2.  Directives du PAM pour MDD-W - https://newgo.wfp.org/documents/minimum-dietary-diversity-for-women-mdd-w-guidance-document
+2.  Directives du PAM pour MDD-W : https://newgo.wfp.org/documents/minimum-dietary-diversity-for-women-mdd-w-guidance-document
 
 *Les versions actualisées des références ne sont pas encore disponibles en français*
-
-
-## MDD-W
-
-Nom de la variable | Etiquette des questions | Choix des réponses
----- | ------------- |------- 
-
 
 
 ### Version papier du questionnaire
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaire_MDDW](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_MDDW.docx?raw=true) 
+[RBDstandardized_questionnaire_MDDW_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_MDDW_FR.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaireMDDW](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireMDDW.xlsx?raw=true) 
+[RBDstandardized_questionnaireMDDW_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireMDDW_FR.xlsx?raw=true) 
 
 
 

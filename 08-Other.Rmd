@@ -4,47 +4,22 @@
 knitr::include_graphics(rep("images/construction.png"))
 ```
 
+Les indicateurs présentés ici sont des modules optionnels mais il est fortement recommandé de les inclure dans PDM.
 
 
 ## Références / Ressources
 
 
 
-## Part des dépenses alimentaires
-
-Nom de la variable | Etiquette des questions | Choix des réponses
----- | ------------- |------- 
-
 ### Version papier du questionnaire
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.docx?raw=true) 
+[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.xlsx?raw=true) 
-
-
-## Calcul des indicateurs
-
-### Example data set
-
-Voici l'exemple d'un ensemble de données brutes :  
-[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
-
-
-### SPSS Syntax
-
-Voici le fichier de syntaxe SPSS : 
-
-[RBDstandardized_SPSSsyntaxLHCS_CARI_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_SPSSsyntaxLHCS_CARI_FR.sps) 
-
-### R Syntax
-
-Voici le fichier de syntaxe SPSS :  
-
-[RBDstandardized_RsyntaxLHCS_CARI_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxLHCS_CARI_FR.R) 
+[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.xlsx?raw=true) 
 
