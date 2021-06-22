@@ -60,7 +60,7 @@ régime-alimentaire-minimum-acceptable-mad
 références-ressources-5
 version-papier-du-questionnaire-5
 version-électronique-du-questionnaire-5
-optional-indcatorsmodules
+indicateursmodules-optionnels
 références-ressources-6
 version-papier-du-questionnaire-6
 version-électronique-du-questionnaire-6

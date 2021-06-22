@@ -1,8 +1,4 @@
-# Optional Indcators/Modules
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
+# Indicateurs/modules optionnels
 
 Les indicateurs présentés ici sont des modules optionnels mais il est fortement recommandé de les inclure dans PDM.
 
