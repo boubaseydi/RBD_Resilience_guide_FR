@@ -4,6 +4,8 @@
 
 1.  CARI Manual - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp271449.pdf
 
+2.  Guide de l'évaluation des besoins essentiels https://docs.wfp.org/api/documents/WFP-0000115416/download/
+
 *Les versions actualisées des références ne sont pas encore disponibles en français*
 
 Des groupes/éléments alimentaires et non alimentaires peuvent être ajoutés au questionnaire ci-dessous en fonction du contexte.  L'utilisation de la structure de dénomination des variables permettra un calcul rapide et une comparabilité.
@@ -19,7 +21,6 @@ Voici le module standardisé en format Word :
 Voici le module standardisé sous xlsform :
 
 [RBDstandardized_questionnaire_lightexp_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
-
 
 
 
