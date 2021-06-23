@@ -1,0 +1,18 @@
+# Questionnaire combiné & Syntaxes  combiné
+
+Les chapitres précédents ont illustré les questionnaires et la syntaxe indicateur par indicateur, module par module.
+
+Ce chapitre contient une version combinée de tous les modules/indicateurs ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.
+
+
+### Version papier du questionnaire
+
+Voici le module standardisé en format Word :
+
+[RBDStandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDStandardized_questionnaire_all_FR.docx?raw=true) 
+
+### Version électronique du questionnaire
+
+Voici le module standardisé sous xlsform :
+
+[RBDStandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDStandardized_questionnaire_all_FR.xslx?raw=true) 

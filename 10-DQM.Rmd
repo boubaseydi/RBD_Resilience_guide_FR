@@ -1,5 +1,11 @@
 # Rapport de contrôle de la qualité des données
 
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
+
+
+
 Si les équipes d'enquête collectent des données avec Kobo/Ona/MoDa/ODK et envoient régulièrement des soumissions à un serveur, alors les analystes peuvent rapidement générer un rapport sur la qualité des données avec Rmarkdown pour suivre régulièrement les résultats des enquêtes et détecter les problèmes qui peuvent survenir sur le terrain lors de la collecte des données.
 
 L'exemple de rapport ci-dessous a été généralisé pour visualiser la progression des enquêtes par zones géographiques et les résultats calculés des indicateurs clés de la CH par zones géographiques et par les recenseurs en utilisant l'ensemble de données brutes téléchargées du serveur Kobo/Ona/MoDa/ODK.

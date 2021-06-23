@@ -22,11 +22,14 @@ Ce guide présente des outils standardisés pour la collecte, le traitement/anal
 
 [Chapter 2 Mise en place de la R & Rstudio](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/mise-en-place-de-la-r-rstudio.html) comment installer le logiciel R & Rstudio, comment ajouter les packages nécessaires et un aperçu sur Rmarkdown (utilisé pour générer des rapports).
 
+[Chapter 3 Score/Groupes de consommation alimentaire et score de diversité alimentaire des ménages (FCS/FCG & HDDS)](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/scoregroupes-de-consommation-alimentaire-et-score-de-diversit%C3%A9-alimentaire-des-m%C3%A9nages-fcsfcg-hdds.html) versions papier et électronique du questionnaire standardisé et de la syntaxe SPSS/R pour le calcul des indicateurs Score/Groupes de consommation alimentaire et Score de diversité alimentaire des ménages.
+
+
 [Chapter 3 Gecodes](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/gecodes.html) explique comment/pourquoi utiliser les géocodes dans la collecte de données (xlsforms) pour accélérer la cartographie et le traitement des données.
 
 [Chapter 4 L’indice réduit des stratégies de survie (rCSI)](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/lindice-r%C3%A9duit-des-strat%C3%A9gies-de-survie-rcsi.html) versions papier et électronique du questionnaire standardisé et de la syntaxe SPSS/R pour le calcul de l'indicateur réduit de l'indice de stratégie d'adaptation.
 
-[Chapter 5 Score/Groupes de consommation alimentaire et score de diversité alimentaire des ménages (FCS/FCG & HDDS)](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/scoregroupes-de-consommation-alimentaire-et-score-de-diversit%C3%A9-alimentaire-des-m%C3%A9nages-fcsfcg-hdds.html) versions papier et électronique du questionnaire standardisé et de la syntaxe SPSS/R pour le calcul des indicateurs Score/Groupes de consommation alimentaire et Score de diversité alimentaire des ménages.
+
 
 [Chapter 6 Stratégie d’adaption aux moyens d’existence (LHCS)](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/strat%C3%A9gie-dadaption-aux-moyens-dexistence-lhcs.html) versions papier et électronique du questionnaire standardisé et de la syntaxe SPSS/R pour le calcul de la stratégie d'adaptation maximale utilisée pour la version légère CARI et la version ENA du module "Livelihood Coping Strategies".
 
