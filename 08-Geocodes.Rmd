@@ -60,7 +60,7 @@ Nous recommandons d'utiliser les codes des colonnes *admin1Pcode* et *admin2Pcod
 
 Voici un exemple d'ensemble de données dont les noms et les étiquettes correspondent aux  Common Operation Datasets.
 
-[xlsformwithgeocodesexample](https://github.com/WFP-VAM/RBD_FS_CH_guide_EN/blob/main/questionnaires/xlsformwithgeocodesexample.xlsx?raw=true) 
+[xlsformwithgeocodesexample](https://wfp-vam.github.io/RBD_Resilience_guide_FR/blob/main/questionnaires/xlsformwithgeocodesexample.xlsx?raw=true) 
 
 ## 2 Notes
 

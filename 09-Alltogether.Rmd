@@ -9,10 +9,10 @@ Ce chapitre contient une version combinée de tous les modules/indicateurs ainsi
 
 Voici le module standardisé en format Word :
 
-[RBDStandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDStandardized_questionnaire_all_FR.docx?raw=true) 
+[RBDStandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDStandardized_questionnaire_all_FR.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDStandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_FS_CH_guide_FR/blob/main/questionnaires/RBDStandardized_questionnaire_all_FR.xslx?raw=true) 
+[RBDstandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_all_FR.xlsx?raw=true) 

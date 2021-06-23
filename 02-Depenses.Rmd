@@ -12,16 +12,22 @@ Des groupes/éléments alimentaires et non alimentaires peuvent être ajoutés a
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
+[RBDstandardized_questionnaire_lightexp_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaire_lightexp](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
+[RBDstandardized_questionnaire_lightexp_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_lightexp_FR.xlsx?raw=true) 
 
 
-## Calcul de indicateur food expenditures
+
+
+## Calcul de indicateur Part des dépenses alimentaires
+
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
 
 ### Example data set
 

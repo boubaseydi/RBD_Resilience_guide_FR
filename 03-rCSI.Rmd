@@ -19,12 +19,12 @@ rCSIMealNb | Au cours des 7 derniers jours, combien de jours votre ménage a-t-i
 ### Version papier du questionnaire
 
 Voici le module standardisé en format Word :
-[RBDstandardized_questionnairerCSI](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI_FR.docx?raw=true) 
+[RBDstandardized_questionnairerCSI_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI_FR.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé en format xlsform :
-[RBDstandardized_questionnairerCSI](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI_FR.xlsx?raw=true) 
+[RBDstandardized_questionnairerCSI_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnairerCSI_FR.xlsx?raw=true) 
 
 
 ## Calcul de l'indicateur rCSI

@@ -24,7 +24,7 @@ part-des-dépenses-alimentaires-cari
 références-ressources-1
 version-papier-du-questionnaire-1
 version-électronique-du-questionnaire-1
-calcul-de-indicateur-food-expenditures
+calcul-de-indicateur-part-des-dépenses-alimentaires
 example-data-set
 spss-syntax-1
 r-syntax-1
