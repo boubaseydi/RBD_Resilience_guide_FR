@@ -15,12 +15,12 @@ Le module ci-dessous vous permet de collecter et de calculer les indicateurs FCS
 ### Version papier du questionnaire
 
 Voici le module standardisé en format Word :
-[RBDstandardized_questionnaireFCSHDDS](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireFCSFCSCN_FR.docx?raw=true) 
+[RBDstandardized_questionnaireFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireFCSFCSN_FR.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
-[RBDstandardized_questionnaireFCSHDDS](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireFCSFCSCN_FR.xlsx?raw=true)
+[RBDstandardized_questionnaireFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireFCSFCSN_FR.xlsx?raw=true)
 
 ## Calcul des indicateurs FCS et FCS-N  
 

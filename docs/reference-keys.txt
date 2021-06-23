@@ -3,7 +3,7 @@ un-bref-aperçu-des-chapitres-de-ce-guide
 à-propos-des-logiciels
 à-propos-des-exemples-densembles-de-données
 à-propos-des-questionnaires-et-des-noms-de-variables
-à-propos-du-style-de-programmation
+à-propos-du-style-de-programmation-en-r
 un-dernier-mot-sur---proposer-des-solutions-et-des-suggestions
 mise-en-place-de-la-r-rstudio
 installation-de-r-rstudio
