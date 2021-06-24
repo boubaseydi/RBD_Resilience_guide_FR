@@ -16,7 +16,7 @@ favicon: images/favicon.ico
 
 # Objectif et mode d'emploi de ce guide
 
-Ce guide présente des outils standardisés pour la collecte, le traitement/analyse et le rapport d'indicateurs clés de résilience provenant d'enquêtes de suivi.na,     
+Ce guide présente des outils standardisés pour la collecte, le traitement/analyse et le rapport d'indicateurs clés de résilience provenant d'enquêtes de suivi.  Ce guide propose la standardisation d'indicateurs clés mais n'est pas exhaustif - les pays collecteront probablement des informations supplémentaires à celles présentées ici.  Il faut également noter que certains indicateurs, y compris ceux spécifiques à la résilience, sont recommandés mais pas obligatoires.
 
 ### Un bref aperçu des chapitres de ce guide :
 

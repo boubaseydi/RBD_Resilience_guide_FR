@@ -4,6 +4,12 @@ Les chapitres précédents ont illustré les questionnaires et la syntaxe indica
 
 Ce chapitre contient une version combinée de tous les modules/indicateurs ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.
 
+Ce questionnaire contient également l'ordre recommandé pour poser les modules du questionnaire.  
+
+Le questionnaire suivant contient les questions standardisées et les modules recommandés mais il n'est pas exhaustif (les pays voudront probablement collecter des questions supplémentaires en plus).  Les questions en bleu sont des modules spécifiques recommandés pour la résilience - elles sont encouragées mais pas obligatoires.     
+
+Utilisateurs peuvent soit utiliser ce questionnaire et le compléter, soit copier ces questions (y compris la feuille de *choix*) dans leurs questionnaires/formulaires XLS.
+
 
 ### Version papier du questionnaire
 
