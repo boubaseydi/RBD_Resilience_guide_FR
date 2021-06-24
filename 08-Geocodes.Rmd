@@ -43,10 +43,10 @@ Mieux encore, utilisez également des noms et des labels standardisés.
 
 list_name | name | label
 ---- | --- |---- 
-cod_lga | NG008002 | Askira/Uba
-cod_lga | NG008004 | Bayo
-cod_lga | NG008006 | Chibok
-cod_lga | NG008015 | Kala/Balge
+ADMIN2Name | NG008002 | Askira/Uba
+ADMIN2Name | NG008004 | Bayo
+ADMIN2Name | NG008006 | Chibok
+ADMIN2Name | NG008015 | Kala/Balge
 
 Grâce à une variable simple et commune permettant de fusionner les deux ensembles de données, la cartographie et le traitement des données peuvent devenir plus rapides et plus faciles.
 

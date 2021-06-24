@@ -6,9 +6,16 @@ Le module ci-dessous vous permet de collecter et de calculer les indicateurs FCS
 
 1.  FCS - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp271449.pdf
 
-2.  FCS_N - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp277333.pdf
+2.  FCS-N - https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp277333.pdf
 
 *Les versions actualisées des références FCS/FCG et FCS-N ne sont pas encore disponibles en français*
+
+Deux points à souligner :
+
+1. Veuillez adapter les exemples d'aliments à votre contexte local (et ensuite, supprimer le texte "remplacer par des exemples localement pertinents"). 
+
+2. Dans les questionnaires ci-dessous, nous recommandons de demander la source des aliments pour chaque groupe d'aliments, mais pas pour chaque aliment (par exemple, la source des protéines est demandée pour les légumes, mais pas séparément pour les légumes orange et les légumes foncés).  Cela réduit la longueur du questionnaire et considère que cette donnée n'est pas nécessaire pour le calcul de l'indicateur.
+
 
 ## Questionnaire standardisé
 
@@ -29,16 +36,23 @@ Voici le module standardisé sous xlsform :
 Voici l'exemple d'un ensemble de données brutes :  
 [exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
-
 ### SPSS Syntax
 
 Voici le fichier de syntaxe SPSS : 
 [RBDStandardized_SPSSsyntaxFCSHDDS_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSHDDS_FR.sps) 
 
+
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
+
 ### R Syntax
 
 Voici le fichier de syntaxe R : 
 [RBDstandardized_RsyntaxFCSHDDS_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxFCSHDDS_FR.R) 
+
+
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
+
