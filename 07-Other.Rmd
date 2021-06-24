@@ -11,11 +11,11 @@ Les indicateurs présentés ici sont des modules optionnels mais il est fortemen
 
 Voici le module standardisé en format Word :
 
-[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.docx?raw=true) 
+[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.docx?raw=true) 
 
 ### Version électronique du questionnaire
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaire_optionalresilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_optionalresilience.xlsx?raw=true) 
+[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.xlsx?raw=true) 
 

@@ -8,7 +8,11 @@
 
 *Les versions actualisées des références ne sont pas encore disponibles en français*
 
-Des groupes/éléments alimentaires et non alimentaires peuvent être ajoutés au questionnaire ci-dessous en fonction du contexte.  L'utilisation de la structure de dénomination des variables permettra un calcul rapide et une comparabilité.
+Deux points à souligner :
+
+1. Des groupes/éléments alimentaires et non alimentaires peuvent être ajoutés au questionnaire ci-dessous en fonction du contexte.  L'utilisation de la structure de dénomination des variables permettra un calcul rapide et une comparabilité.
+
+2.   Le pays peut ajouter des contraintes locales pour éviter les erreurs de saisie de données. 
 
 ### Version papier du questionnaire
 
