@@ -1,4 +1,4 @@
-# Indicateurs/modules optionnels
+# Nouveaux indicateurs de résilience
 
 Les indicateurs présentés ici sont des modules optionnels mais il est fortement recommandé de les inclure dans PDM.
 
