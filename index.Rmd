@@ -19,20 +19,6 @@ favicon: images/favicon.ico
 Ce guide présente des outils standardisés pour la collecte, le traitement/analyse et le rapport d'indicateurs clés de résilience provenant d'enquêtes de suivi.  Ce guide propose la standardisation d'indicateurs clés mais n'est pas exhaustif - les pays collecteront probablement des informations supplémentaires à celles présentées ici.  Il faut également noter que certains indicateurs, y compris ceux spécifiques à la résilience, sont recommandés mais pas obligatoires.
 
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/fd.jpg"))
-```
-
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/bs.jpg"))
-```
-
-
-
-
-
-
 ### Un bref aperçu des chapitres de ce guide :
 
 [Chapter 2 Mise en place de la R & Rstudio](https://wfp-vam.github.io/RBD_FS_CH_guide_FR/mise-en-place-de-la-r-rstudio.html) comment installer le logiciel R & Rstudio, comment ajouter les packages nécessaires et un aperçu sur Rmarkdown (utilisé pour générer des rapports).
