@@ -30,5 +30,5 @@ Voici le module standardisé en format Word :
 
 Voici le module standardisé sous xlsform :
 
-[RBDstandardized_questionnaireMAD_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaireMAD_FR.xlsx?raw=true) 
+[RBDstandardized_questionnaire_MAD_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_MAD_FR.xlsx?raw=true) 
 
