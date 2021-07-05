@@ -18,3 +18,23 @@ Voici le module standardisé en format Word :
 Voici le module standardisé sous xlsform :
 
 [RBDstandardized_questionnaire_all_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_all_FR.xlsx?raw=true) 
+
+
+
+### SPSS Syntax
+
+Voici le fichier syntaxique R combiné pour le calcul des  indicateurs FCS/FCSN, Part depense, rCSI, LhCSI: 
+
+[RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.sps) 
+
+*Note - on cherche toujours un moyen de créer des variables ADMIN1Code & ADMIN2Code à partir des variables ADMIN1Name & ADMIN2Name dans SPSS*
+
+
+### R Syntax
+
+Voici le fichier syntaxique R combiné pour le calcul des  indicateurs -FCS/FCSN, Part depense, rCSI, LhCSI: 
+
+[RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.R) 
+
+
+

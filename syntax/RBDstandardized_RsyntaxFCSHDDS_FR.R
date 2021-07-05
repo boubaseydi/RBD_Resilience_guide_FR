@@ -19,25 +19,32 @@ dataset <- dataset %>% mutate(
 var_label(dataset$FCSCat21) <- "Groupe de consommation alimentaire - Seuils du 21/35"
 var_label(dataset$FCSCat28) <-  "Groupe de consommation alimentaire - Seuils du 28/42"
 
+# calculate Score de Consommation Alimentaire Nutrition (FCS-N)
 
+compute FGVitA = sum(FCSDairy, FCSPrMeatO, FCSPrEgg, FCSVegOrg, FCSVegGre, FCSFruitOrg).
+variable labels FGVitA "Consommation d'aliments riches en vitamine A".
 
-#calculate HDDS first by creating the 12 groups based on the 16 questions
-dataset <- dataset %>% mutate(
-  HDDSStapCer = case_when(HDDSStapCer == "Oui" ~ 1, TRUE ~ 0),
-  HDDSStapRoot = case_when(HDDSStapRoot  == "Oui" ~ 1, TRUE ~ 0),
-  HDDSVeg = case_when(HDDSVegOrg  == "Oui" | HDDSVegGre == "Oui" | HDDSVegOth == "Oui" ~ 1, TRUE ~ 0),
-  HDDSFruit = case_when(HDDSFruitOrg == "Oui" | HDDSFruitOth == "Oui" ~ 1, TRUE ~ 0),
-  HDDSPrMeat = case_when(HDDSPrMeatF == "Oui" | HDDSPrMeatO == "Oui" ~ 1, TRUE ~ 0),
-  HDDSPrEgg = case_when(HDDSPrEgg  == "Oui" ~ 1, TRUE ~ 0),
-  HDDSPrFish = case_when(HDDSPrFish == "Oui" ~ 1, TRUE ~ 0),
-  HDDSPulse = case_when(HDDSPulse == "Oui" ~ 1, TRUE ~ 0),
-  HDDSDairy = case_when(HDDSDairy == "Oui" ~ 1, TRUE ~ 0),
-  HDDSFat = case_when(HDDSFat == "Oui" ~ 1, TRUE ~ 0),
-  HDDSSugar = case_when(HDDSSugar == "Oui" ~ 1, TRUE ~ 0),
-  HDDSCond = case_when(HDDSCond == "Oui"~ 1, TRUE ~ 0))
+compute FGProtein = sum(FCSPulse, FCSDairy, FCSPrMeatF, FCSPrMeatO, FCSPrFish, FCSPrEgg).
+variable labels FGProtein "Consommation d'aliments riches en protiéine".
 
-#Calculate HDDS and Cadre Harmonise Phases
-dataset <- dataset %>% mutate(HDDS = HDDSStapCer +HDDSStapRoot +HDDSVeg +HDDSFruit +HDDSPrMeat +HDDSPrEgg +HDDSPrFish +HDDSPulse +HDDSDairy +HDDSFat +HDDSSugar +HDDSCond)
-var_label(dataset$HDDS) <- "Score de la diversité alimentaire des ménages"
+compute FGHIron = sum(FCSPrMeatF, FCSPrMeatO, FCSPrFish).
+variable labels FGHIron "Consommation d'aliments riches en fer".
 
+*** recoder en groupes basés sur la consommation
 
+RECODE FGVitA (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGVitACat.
+variable labels FGVitACat "Consommation d'aliments riches en vitamine A".
+
+RECODE FGProtein (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGProteinCat.
+variable labels FGProteinCat "Consommation d'aliments riches en protiéine".
+
+RECODE FGHIron (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGHIronCat.
+variable labels  FGHIronCat "Consommation d'aliments riches en fer".
+
+*** define variables labels and properties for " FGVitACat FGProteinCat FGHIronCat ".
+
+VALUE LABELS FGVitACat FGProteinCat FGHIronCat
+1.00 '0 jours'
+2.00 '1-6 jours'
+3.00 '7 jours'.
+EXECUTE.

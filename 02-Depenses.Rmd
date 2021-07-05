@@ -34,10 +34,6 @@ Voici le module standardisé sous xlsform :
 Voici l'exemple d'un ensemble de données brutes :  
 [exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
-
 ### SPSS Syntax
 
 Voici le fichier de syntaxe SPSS : 

@@ -63,6 +63,8 @@ notes
 questionnaire-combiné-syntaxes-combiné
 version-papier-du-questionnaire-6
 version-électronique-du-questionnaire-6
+spss-syntax-4
+r-syntax-4
 rapport-de-contrôle-de-la-qualité-des-données
 aperçu-des-étapes
 exemple-de-vidéo
