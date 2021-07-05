@@ -25,7 +25,7 @@ références-ressources-1
 version-papier-du-questionnaire-1
 version-électronique-du-questionnaire-1
 calcul-de-indicateur-part-des-dépenses-alimentaires
-example-data-set
+exemple-densemble-de-données-1
 spss-syntax-1
 r-syntax-1
 lindice-réduit-des-stratégies-de-survie-rcsi
@@ -34,7 +34,7 @@ questionnaire-standardisé-1
 version-papier-du-questionnaire-2
 version-électronique-du-questionnaire-2
 calcul-de-lindicateur-rcsi
-exemple-densemble-de-données-1
+exemple-densemble-de-données-2
 spss-syntax-2
 r-syntax-2
 stratégie-dadaption-aux-moyens-dexistence-lhcs
@@ -43,7 +43,7 @@ module-cari-léger-standardisé
 version-papier-du-questionnaire-3
 version-électronique-du-questionnaire-3
 calcul-de-indicateur-lhcs
-example-data-set-1
+example-data-set
 spss-syntax-3
 r-syntax-3
 diversite-alimentaire-des-femmes-mdd-w
@@ -55,17 +55,14 @@ références-ressources-5
 version-papier-du-questionnaire-5
 version-électronique-du-questionnaire-5
 nouveaux-indicateurs-de-résilience
-références-ressources-6
-version-papier-du-questionnaire-6
-version-électronique-du-questionnaire-6
 gecodes
 un-exemple-simple-du-problème
 où-trouver-les-codes-pcodes-et-plus-de-détails
 exemple-densemble-de-données-de-la-fiche-de-collecte-de-données-pour-le-nigeria
 notes
 questionnaire-combiné-syntaxes-combiné
-version-papier-du-questionnaire-7
-version-électronique-du-questionnaire-7
+version-papier-du-questionnaire-6
+version-électronique-du-questionnaire-6
 rapport-de-contrôle-de-la-qualité-des-données
 aperçu-des-étapes
 exemple-de-vidéo

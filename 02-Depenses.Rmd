@@ -29,26 +29,21 @@ Voici le module standardisé sous xlsform :
 
 ## Calcul de indicateur Part des dépenses alimentaires
 
+### Exemple d'ensemble de données
+
+Voici l'exemple d'un ensemble de données brutes :  
+[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
+
 ``` {r, echo = FALSE}
 knitr::include_graphics(rep("images/construction.png"))
 ```
-
-### Example data set
-
 
 ### SPSS Syntax
 
 Voici le fichier de syntaxe SPSS : 
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
+[RBDStandardized_SPSSsyntaxExp_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxExp_FR.sps) 
 
 ### R Syntax
 
-Voici le fichier de syntaxe SPSS :  
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
-
+Voici le fichier de syntaxe R : 
+[RBDstandardized_RsyntaxExp_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxExp_FR.R) 

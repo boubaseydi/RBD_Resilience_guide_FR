@@ -39,20 +39,11 @@ Voici l'exemple d'un ensemble de données brutes :
 ### SPSS Syntax
 
 Voici le fichier de syntaxe SPSS : 
-[RBDStandardized_SPSSsyntaxFCSHDDS_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSHDDS_FR.sps) 
-
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
+[RBDStandardized_SPSSsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSFCSN_FR.sps) 
 
 ### R Syntax
 
 Voici le fichier de syntaxe R : 
-[RBDstandardized_RsyntaxFCSHDDS_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxFCSHDDS_FR.R) 
+[RBDStandardized_SPSSsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSFCSN_FR.R) 
 
-
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
 

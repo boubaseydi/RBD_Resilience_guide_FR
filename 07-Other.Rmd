@@ -1,21 +1,10 @@
 # Nouveaux indicateurs de résilience
 
-Les indicateurs présentés ici sont des modules optionnels mais il est fortement recommandé de les inclure dans PDM.
+Des indicateurs/questions de résilience sont en cours de développement - contactez rbd.ram@wfp.org pour plus d'informations.
+
+``` {r, echo = FALSE}
+knitr::include_graphics(rep("images/construction.png"))
+```
 
 
-## Références / Ressources
-
-
-
-### Version papier du questionnaire
-
-Voici le module standardisé en format Word :
-
-[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.docx?raw=true) 
-
-### Version électronique du questionnaire
-
-Voici le module standardisé sous xlsform :
-
-[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.xlsx?raw=true) 
 
