@@ -2,9 +2,9 @@
 
 Si les équipes d'enquête collectent des données avec Kobo/Ona/MoDa/ODK et envoient régulièrement des soumissions à un serveur, alors les analystes peuvent rapidement générer un rapport sur la qualité des données avec Rmarkdown pour suivre régulièrement les résultats des enquêtes et détecter les problèmes qui peuvent survenir sur le terrain lors de la collecte des données.
 
-L'exemple de rapport ci-dessous a été généralisé pour visualiser la progression des enquêtes par zones géographiques et les résultats calculés des indicateurs clés de la CH par zones géographiques et par les recenseurs en utilisant l'ensemble de données brutes téléchargées du serveur Kobo/Ona/MoDa/ODK.
+L'exemple de rapport ci-dessous a été généralisé pour visualiser la progression des enquêtes par zones géographiques et les résultats calculés des indicateurs clés par zones géographiques et par les enqueteurs  en utilisant l'ensemble de données brutes téléchargées du serveur Kobo/Ona/MoDa/ODK.
 
-Pour des raisons de confidentialité et de sécurité des données, le code du recenseur doit être utilisé plutôt que le nom du recenseur.  Si un opérateur particulier doit être identifié ou contacté - vous pouvez vous référer au formulaire de collecte des données pour faire correspondre le code de l'énumérateur avec le nom de l'énumérateur. 
+Pour des raisons de confidentialité et de sécurité des données, le code du enqueteurs  doit être utilisé plutôt que le nom du enqueteurs .  Si un opérateur particulier doit être identifié ou contacté - vous pouvez vous référer au formulaire de collecte des données pour faire correspondre le code de l'énumérateur avec le nom de l'énumérateur. 
 
 
 ## Aperçu des étapes
@@ -28,7 +28,7 @@ En outre, si le nom de la variable des enquêteurs n'est pas "EnumName", insére
 
 ```{r, eval = F}
 #standardized enumerator name variable
-dataset <- dataset %>% rename(EnumName = OLDNAMEOFENUMERATORVARIABLE) 
+dataset <- dataset %>% rename(EnumNamePDM = OLDNAMEOFENUMERATORVARIABLE) 
 ```
 
 Pour les calculs des groupes de consommation alimentaire - modifier le code pour utiliser "FCSCat21" pour les seuils 21/35 ou "FCSCat28" pour les seuils 28/42, selon le cas.

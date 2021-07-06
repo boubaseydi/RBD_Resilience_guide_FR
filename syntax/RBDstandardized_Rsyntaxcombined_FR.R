@@ -1,6 +1,7 @@
 library(haven)
 library(labelled)
 library(tidyverse)
+library(skimr)
 
 #import dataset
 dataset <- read_sav("example_datasets/exampledataFrancais_raw.sav")
@@ -10,13 +11,7 @@ dataset <- dataset %>% mutate(ADMIN1Code = as.character(ADMIN1Name))
 dataset <- dataset %>% mutate(ADMIN2Code = as.character(ADMIN2Name))
 dataset <- to_factor(dataset)
 
-
-##calculate rCSI
-dataset <- dataset %>% mutate(rCSI = rCSILessQlty  + (2 * rCSIBorrow) + rCSIMealSize + (3 * rCSIMealAdult) + rCSIMealNb)
-var_label(dataset$rCSI) <- "rCSI"
-
-
-## FCS / FCSN
+### FCS / FCSN
 dataset <- dataset %>% mutate(FCS = (2 * FCSStap) + (3 * FCSPulse)+ (4*FCSPr) +FCSVeg  +FCSFruit +(4*FCSDairy) + (0.5*FCSFat) + (0.5*FCSSugar))
 var_label(dataset$FCS) <- "Score de consommation alimentaire"
 #create FCG groups based on 21/25 or 28/42 thresholds - analyst should decide which one to use.
@@ -27,6 +22,17 @@ dataset <- dataset %>% mutate(
     FCS <= 28 ~ "Pauvre", between(FCS, 28.5, 42) ~ "Limite", FCS > 42 ~ "Acceptable"))
 var_label(dataset$FCSCat21) <- "Groupe de consommation alimentaire - Seuils du 21/35"
 var_label(dataset$FCSCat28) <-  "Groupe de consommation alimentaire - Seuils du 28/42"
+
+#create the 4 point food consumption score for CARI
+dataset <- dataset %>% mutate(FCS_4pt = case_when(
+  FCSCat28 == "Pauvre" ~ 4,
+  FCSCat28 == "Limite" ~ 3,
+  FCSCat28 == "Acceptable" ~ 1))
+
+# define variables labels and properties
+var_label(dataset$FCS_4pt) <-  "4pt FCG"
+val_labels(dataset$FCS_4pt) <- c("Pauvre" = 4, "Limite" = 3, "Acceptable" = 1)
+
 # calculate Score de Consommation Alimentaire Nutrition (FCS-N)
 dataset <- dataset %>% mutate(FGVitA = FCSDairy + FCSPrMeatO + FCSPrEgg + FCSVegOrg + FCSVegGre + FCSFruitOrg)
 var_label(dataset$FGVitA) <-  "Consommation d'aliments riches en vitamine A"
@@ -60,7 +66,7 @@ val_labels(dataset$FGProteinCat) <- c("0 jours" = 1, "1-6 jours" = 2, "7 jours" 
 val_labels(dataset$FGHIronCat) <- c("0 jours" = 1, "1-6 jours" = 2, "7 jours" = 3)
 
 
-## EXPENDITURES
+### EXPENDITURES
 #set all missing response NAs to zeros for all the relevant expenditure variables - because in R adding with NAs can create problems
 dataset <- dataset %>% mutate_at(vars(ends_with("_MN")), ~replace(., is.na(.), 0))
 dataset <- dataset %>% mutate_at(vars(ends_with("_CRD")), ~replace(., is.na(.), 0))
@@ -93,36 +99,66 @@ var_label(dataset$Foodexp_4pt) <- "catégories de répartition des dépenses ali
 #value labels
 val_labels(dataset$Foodexp_4pt) <- c("less than 50%" = 1, "between 50 and 65%" = 2, "between 65 and 75%" = 3, "greater than 75%" = 4)
 
+###calculate rCSI
+dataset <- dataset %>% mutate(rCSI = rCSILessQlty  + (2 * rCSIBorrow) + rCSIMealSize + (3 * rCSIMealAdult) + rCSIMealNb)
+var_label(dataset$rCSI) <- "rCSI"
 
-
-#Calculate LHCS
-#parce que le texte est très long dans les questions - voir si la réponse a été tronquée
+###Calculate LHCS
+# parce que le texte est très long dans les questions - voir si la réponse a été tronquée - parce qu'il sera difficile de faire correspondre le texte exact
+# utilisez str_detect avec une partie du texte de la réponse
 levels(dataset$LhCSIStress1)
+
+#Stress
 dataset <- dataset %>% mutate(stress_coping = case_when(
-  LhCSIStress1 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSIStress2 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSIStress3 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSIStress4 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
+  LhCSIStress1 == "Oui" | str_detect(LhCSIStress1,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSIStress2 == "Oui" | str_detect(LhCSIStress2,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSIStress3 == "Oui" | str_detect(LhCSIStress3,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSIStress4 == "Oui" | str_detect(LhCSIStress4,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
   TRUE ~ "Non"))
 var_label(dataset$stress_coping) <- "le ménage s'est-il engagé dans des stratégies  du stress ?"
+
 #Crisis
 dataset <- dataset %>% mutate(crisis_coping = case_when(
-  LhCSICrisis1 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSICrisis2 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSICrisis3 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
+  LhCSICrisis1 == "Oui" | str_detect(LhCSICrisis1,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSICrisis2 == "Oui" | str_detect(LhCSICrisis2,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSICrisis3 == "Oui" | str_detect(LhCSICrisis3,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
   TRUE ~ "Non"))
 var_label(dataset$crisis_coping) <- "le ménage s'est-il engagé dans des stratégies d'adaptation aux crises ?"
+
 #Emergency
 dataset <- dataset %>% mutate(emergency_coping = case_when(
-  LhCSIEmergency1 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSIEmergency2 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
-  LhCSIEmergency3 %in% c("Oui","Non, parce que j’ai déjà vendu ces actifs ou mené cette activité au cours des 12 derniers mois et je ne peux pas c") ~ "Oui",
+  LhCSIEmergency1 == "Oui" | str_detect(LhCSIEmergency1,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSIEmergency2 == "Oui" | str_detect(LhCSIEmergency2,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
+  LhCSIEmergency3 == "Oui" | str_detect(LhCSIEmergency3,"Non, parce que j’ai déjà vendu ces actifs") ~ "Oui",
   TRUE ~ "Non"))
 var_label(dataset$emergency_coping) <- "le ménage s'est-il engagé dans des stratégies d'adaptation d'urgence ?"
+
 #calculate Max_coping_behaviour
 dataset <- dataset %>% mutate(LhCSICat = case_when(
-  emergency_coping == "Oui" ~ "StrategiesdeUrgence",
-  crisis_coping == "Oui" ~ "StrategiesdeCrise",
-  stress_coping == "Oui" ~ "StrategiesdeStress",
-  TRUE ~ "Pasdestrategies"))
+  emergency_coping == "Oui" ~ 4,
+  crisis_coping == "Oui" ~ 3,
+  stress_coping == "Oui" ~ 2,
+  TRUE ~ 1))
+
+#value and variable labels
+val_labels(dataset$LhCSICat) <- c("Pasdestrategies" = 1, "StrategiesdeStress" = 2, "StrategiesdeCrise" = 3, "StrategiesdeUrgence" = 4)
 var_label(dataset$LhCSICat) <- "Catégories de stratégies d'adaptation aux moyens d'existence - version léger  de CARI"
+
+###CARI
+
+dataset <- dataset %>% rowwise() %>% mutate(Mean_coping_capacity = mean(c(LhCSICat,Foodexp_4pt)))
+
+dataset <- dataset %>% rowwise() %>% mutate(FS_class_unrounded = mean(c(FCS_4pt,Mean_coping_capacity)))
+
+dataset <- dataset %>% mutate(FS_final = round(FS_class_unrounded))
+
+#value and variable labels
+val_labels(dataset$FS_final) <- c("sécurité alimentaire" = 1, "Sécurité alimentaire marginale" = 2, "insécurité alimentaire modérée" = 3, "'severely food insecure" = 4)
+var_label(dataset$FS_final) <- "CARI"
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-* Encoding: UTF-8.
+ï»¿* Encoding: UTF-8.
 GET  FILE='exampledataFrancais_raw.sav'.
 DATASET NAME DataSet1 WINDOW=FRONT.
 
@@ -8,7 +8,7 @@ DATASET NAME DataSet1 WINDOW=FRONT.
 compute FCS = sum(FCSStap*2, FCSPulse*3, FCSDairy*4, FCSPr*4, FCSVeg, FCSFruit, FCSFat*0.5, FCSSugar*0.5).
 variable labels FCS "Score de Consommation Alimentaire".
 EXECUTE.
-** calculer  des groupes de consommation alimentaire à partir du score de consommation alimentaire - seuils 21/35 et 28/42s
+** calculer  des groupes de consommation alimentaire ï¿½ partir du score de consommation alimentaire - seuils 21/35 et 28/42s
 
 recode FCS (0 thru 21 = 1) (21 thru 35 = 2) (35 thru highest = 3) into FCSCat21.
 variable labels FCSCat21 "Groupes de Consommation Alimentaire - seuils 21/35".
@@ -21,12 +21,11 @@ VALUE LABELS FCSCat21 FCSCat28
 2 "Limite"
 3 "Acceptable".
 EXECUTE.
-*utiliser le seuil approprié - 21 ou 28
+*utiliser le seuil appropriï¿½ - 21 ou 28
 
 RECODE FCSCat28 (1=4) (2=3) (3=1) INTO FCS_4pt.
 VARIABLE LABELS FCS_4pt '4pt FCG'.
 EXECUTE.
-
 
 * Define Variable Properties.
 *FCS_4pt.
@@ -41,28 +40,28 @@ EXECUTE.
 compute FGVitA = sum(FCSDairy, FCSPrMeatO, FCSPrEgg, FCSVegOrg, FCSVegGre, FCSFruitOrg).
 variable labels FGVitA "Consommation d'aliments riches en vitamine A".
 compute FGProtein = sum(FCSPulse, FCSDairy, FCSPrMeatF, FCSPrMeatO, FCSPrFish, FCSPrEgg).
-variable labels FGProtein "Consommation d'aliments riches en protiéine".
+variable labels FGProtein "Consommation d'aliments riches en protiï¿½ine".
 compute FGHIron = sum(FCSPrMeatF, FCSPrMeatO, FCSPrFish).
 variable labels FGHIron "Consommation d'aliments riches en fer".
 EXECUTE.
-*** recoder en groupes basés sur la consommation 
+*** recoder en groupes basï¿½s sur la consommation 
 
 RECODE FGVitA (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGVitACat.
 variable labels FGVitACat "Consommation d'aliments riches en vitamine A".
 RECODE FGProtein (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGProteinCat.
-variable labels FGProteinCat "Consommation d'aliments riches en protiéine".
+variable labels FGProteinCat "Consommation d'aliments riches en protiï¿½ine".
 RECODE FGHIron (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGHIronCat.
 variable labels  FGHIronCat "Consommation d'aliments riches en fer".
 EXECUTE.
 *** define variables labels and properties for " FGVitACat FGProteinCat FGHIronCat ".
 
 VALUE LABELS FGVitACat FGProteinCat FGHIronCat
-1.00 '0 jours'
-2.00 '1-6 jours'
-3.00 '7 jours'.
+1 '0 jours'
+2 '1-6 jours'
+3 '7 jours'.
 EXECUTE.
 
-*Dépenses 
+*Dï¿½penses 
 *recod all missing (NA) to zero
 
 RECODE HHExpFCer_1M_MN HHExpFCer_1M_CRD HHExpFCer_1M_GiftAid HHExpFCer_1M_Own HHExpFTub_1M_MN HHExpFTub_1M_CRD HHExpFTub_1M_GiftAid HHExpFTub_1M_Own HHExpFPuls_1M_MN 
@@ -87,7 +86,7 @@ HHExpFFrt_1M_GiftAid,HHExpFFrt_1M_Own,HHExpFAnimMeat_1M_MN,HHExpFAnimMeat_1M_CRD
 HHExpFAnimFish_1M_GiftAid,HHExpFAnimFish_1M_Own,HHExpFFats_1M_MN,HHExpFFats_1M_CRD,HHExpFFats_1M_GiftAid,HHExpFFats_1M_Own,HHExpFDairy_1M_MN,HHExpFDairy_1M_CRD,HHExpFDairy_1M_GiftAid,
 HHExpFDairy_1M_Own,HHExpFAnimEgg_1M_MN,HHExpFAnimEgg_1M_CRD,HHExpFAnimEgg_1M_GiftAid,HHExpFAnimEgg_1M_Own,HHExpFSgr_1M_MN,HHExpFSgr_1M_CRD,HHExpFSgr_1M_GiftAid,HHExpFSgr_1M_Own,
 HHExpFBeverage_1M_MN,HHExpFBeverage_1M_CRD,HHExpFBeverage_1M_GiftAid,HHExpFBeverage_1M_Own,HHExpFOut_1M_MN,HHExpFOut_1M_CRD,HHExpFOut_1M_GiftAid,HHExpFOut_1M_Own).
-VARIABLE LABELS food_monthly 'Dépenses alimentaires du ménage au cours du mois'.
+VARIABLE LABELS food_monthly 'Dï¿½penses alimentaires du mï¿½nage au cours du mois'.
 EXECUTE.
 
 *compute 1 month short term nonfood expenses
@@ -96,7 +95,7 @@ COMPUTE nonfood1_monthly=sum(HHExpNFHyg_1M_GiftAid,HHExpNFHyg_1M_MN,HHExpNFHyg_1
 HHExpNFWat_1M_CRD,HHExpNFWat_1M_GiftAid,HHExpNFElec_1M_MN,HHExpNFElec_1M_CRD,HHExpNFElec_1M_GiftAid,HHExpNFEnerg_1M_MN,HHExpNFEnerg_1M_CRD,HHExpNFEnerg_1M_GiftAid,
 HHExpNFDwelServ_1M_MN,HHExpNFDwelServ_1M_CRD,HHExpNFDwelServ_1M_GiftAid,HHExpNFPhone_1M_MN,HHExpNFPhone_1M_CRD,HHExpNFPhone_1M_GiftAid,HHExpNFAlcTobac_1M_MN,HHExpNFAlcTobac_1M_CRD,
 HHExpNFAlcTobac_1M_GiftAid).
-VARIABLE LABELS nonfood1_monthly 'Dépenses à court terme non alimentaires des ménages au cours du mois '.
+VARIABLE LABELS nonfood1_monthly 'Dï¿½penses ï¿½ court terme non alimentaires des mï¿½nages au cours du mois '.
 EXECUTE.
 
 *compute 1 month longterm nonfood expenses
@@ -104,18 +103,18 @@ EXECUTE.
 COMPUTE nonfood2_monthly=sum(HHExpNFMedServ_6M_MN,HHExpNFMedServ_6M_CRD,HHExpNFMedServ_6M_GiftAid,HHExpNFMedGood_6M_MN,HHExpNFMedGood_6M_CRD,HHExpNFMedGood_6M_GiftAid,HHExpNFCloth_6M_MN,HHExpNFCloth_6M_CRD,
 HHExpNFCloth_6M_GiftAid,HHExpNFEduFee_6M_MN,HHExpNFEduFee_6M_CRD,HHExpNFEduFee_6M_GiftAid,HHExpNFEduGood_6M_MN,HHExpNFEduGood_6M_CRD,HHExpNFEduGood_6M_GiftAid,HHExpNFRent_6M_MN,
 HHExpNFRent_6M_CRD,HHExpNFRent_6M_GiftAid,HHExpNFHHSoft_6M_MN,HHExpNFHHSoft_6M_CRD,HHExpNFHHSoft_6M_GiftAid,HHExpNFSav_6M_Tot,HHExpNFDebt_6M_Tot,HHExpNFInsurance_6M_Tot)/6.
-VARIABLE LABELS nonfood2_monthly 'Dépenses à long terme non alimentaires des ménages au cours du mois'.
+VARIABLE LABELS nonfood2_monthly 'Dï¿½penses ï¿½ long terme non alimentaires des mï¿½nages au cours du mois'.
 EXECUTE.
 
 *compute food expenditure share and food expenditure share categories
 
 COMPUTE FoodExp_share= food_monthly/sum(food_monthly, nonfood1_monthly, nonfood2_monthly).
-VARIABLE LABELS FoodExp_share 'part des dépenses alimentaires des ménages'
+VARIABLE LABELS FoodExp_share 'part des dï¿½penses alimentaires des mï¿½nages'
 EXECUTE.
 
 RECODE FoodExp_share (Lowest thru .49=1) (.50 thru .649=2) (.65 thru .749=3) (.75 thru Highest=4)
  INTO Foodexp_4pt.
-VARIABLE LABELS Foodexp_4pt 'catégories de répartition des dépenses alimentaires'.
+VARIABLE LABELS Foodexp_4pt 'catï¿½gories de rï¿½partition des dï¿½penses alimentaires'.
 EXECUTE.
 
 VALUE LABELS Foodexp_4pt
@@ -141,7 +140,7 @@ compute stress_coping = 1.
 ELSE.
 compute stress_coping = 0.
 end if.
-variable labels stress_coping "le ménage s'est-il engagé dans des stratégies  du stress ?".
+variable labels stress_coping "le mï¿½nage s'est-il engagï¿½ dans des stratï¿½gies  du stress ?".
 value labels stress_coping
 0 "Non"
 1 "Oui".
@@ -155,7 +154,7 @@ compute crisis_coping = 1.
 ELSE.
 compute crisis_coping = 0.
 end if.
-variable labels crisis_coping "le ménage s'est-il engagé dans des stratégies d'adaptation aux crises ?".
+variable labels crisis_coping "le mï¿½nage s'est-il engagï¿½ dans des stratï¿½gies d'adaptation aux crises ?".
 value labels crisis_coping
 0 "Non"
 1 "Oui".
@@ -170,7 +169,7 @@ compute emergency_coping = 1.
 ELSE.
 compute emergency_coping = 0.
 end if.
-variable labels emergency_coping "le ménage s'est-il engagé dans des stratégies d'adaptation d'urgence ?".
+variable labels emergency_coping "le mï¿½nage s'est-il engagï¿½ dans des stratï¿½gies d'adaptation d'urgence ?".
 value labels emergency_coping
 0 "Non"
 1 "Oui".
@@ -186,7 +185,7 @@ compute LhCSICat=max(stress_coping, crisis_coping, emergency_coping).
 recode LhCSICat (0=1).
 
 Value labels LhCSICat 1 "Pasdestrategies" 2 "StrategiesdeStress" 3 "StrategiesdeCrise" 4 "StrategiesdUrgence".
-Variable Labels LhCSICat "Catégories de stratégies d'adaptation aux moyens d'existence - version léger  de CARI".
+Variable Labels LhCSICat "Catï¿½gories de stratï¿½gies d'adaptation aux moyens d'existence - version lï¿½ger  de CARI".
 EXECUTE.
 
 *** Calculate CARI 
@@ -201,10 +200,10 @@ EXECUTE.
 * Define Variable Properties.
 
 VALUE LABELS FS_final
- 1.00 'sécurité alimentaire'
- 2.00 'sécurité alimentaire marginale'
- 3.00 'insécurité alimentaire modérée'
- 4.00 'insécurité alimentaire sévère'.
+ 1.00 'sï¿½curitï¿½ alimentaire'
+ 2.00 'sï¿½curitï¿½ alimentaire marginale'
+ 3.00 'insï¿½curitï¿½ alimentaire modï¿½rï¿½e'
+ 4.00 'insï¿½curitï¿½ alimentaire sï¿½vï¿½re'.
 EXECUTE.
 
 

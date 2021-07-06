@@ -20,6 +20,23 @@ VALUE LABELS FCSCat21 FCSCat28
 2 "Limite"
 3 "Acceptable".
 
+*utiliser le seuil appropri� - 21 ou 28
+
+RECODE FCSCat28 (1=4) (2=3) (3=1) INTO FCS_4pt.
+VARIABLE LABELS FCS_4pt '4pt FCG'.
+EXECUTE.
+
+* Define Variable Properties.
+*FCS_4pt.
+VALUE LABELS FCS_4pt
+ 1.00 'acceptable'
+ 3.00 'limite'
+ 4.00 'pauvre'.
+EXECUTE.
+
+
+
+
 ** calculate Score de Consommation Alimentaire Nutrition (FCS-N)
 
 compute FGVitA = sum(FCSDairy, FCSPrMeatO, FCSPrEgg, FCSVegOrg, FCSVegGre, FCSFruitOrg).

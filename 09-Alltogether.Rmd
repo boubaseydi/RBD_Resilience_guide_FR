@@ -23,7 +23,7 @@ Voici le module standardisé sous xlsform :
 
 ### SPSS Syntax
 
-Voici le fichier syntaxique R combiné pour le calcul des  indicateurs FCS/FCSN, Part depense, rCSI, LhCSI: 
+Voici le fichier syntaxique R combiné pour le calcul des  indicateurs FCS/FCSN, Part depense, rCSI, LhCSI et CARI: 
 
 [RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.sps) 
 
@@ -32,7 +32,7 @@ Voici le fichier syntaxique R combiné pour le calcul des  indicateurs FCS/FCSN,
 
 ### R Syntax
 
-Voici le fichier syntaxique R combiné pour le calcul des  indicateurs -FCS/FCSN, Part depense, rCSI, LhCSI: 
+Voici le fichier syntaxique R combiné pour le calcul des  indicateurs -FCS/FCSN, Part depense, rCSI, LhCSI et CARI: 
 
 [RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.R) 
 

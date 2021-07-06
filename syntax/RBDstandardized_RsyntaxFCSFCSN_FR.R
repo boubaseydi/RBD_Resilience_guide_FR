@@ -19,6 +19,16 @@ dataset <- dataset %>% mutate(
 var_label(dataset$FCSCat21) <- "Groupe de consommation alimentaire - Seuils du 21/35"
 var_label(dataset$FCSCat28) <-  "Groupe de consommation alimentaire - Seuils du 28/42"
 
+#create the 4 point food consumption score for CARI
+dataset <- dataset %>% mutate(FCS_4pt = case_when(
+  FCSCat28 == "Pauvre" ~ 4,
+  FCSCat28 == "Limite" ~ 3,
+  FCSCat28 == "Acceptable" ~ 1))
+
+# define variables labels and properties
+var_label(dataset$FCS_4pt) <-  "4pt FCG"
+val_labels(dataset$FCS_4pt) <- c("Pauvre" = 4, "Limite" = 3, "Acceptable" = 1)
+
 # calculate Score de Consommation Alimentaire Nutrition (FCS-N)
 
 dataset <- dataset %>% mutate(FGVitA = FCSDairy + FCSPrMeatO + FCSPrEgg + FCSVegOrg + FCSVegGre + FCSFruitOrg)
