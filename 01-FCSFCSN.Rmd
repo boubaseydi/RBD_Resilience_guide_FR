@@ -44,6 +44,6 @@ Voici le fichier de syntaxe SPSS :
 ### R Syntax
 
 Voici le fichier de syntaxe R : 
-[RBDStandardized_SPSSsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSFCSN_FR.R) 
+[RBDstandardized_RsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxFCSFCSN_FR.R) 
 
 
