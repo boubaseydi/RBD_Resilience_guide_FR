@@ -31,7 +31,7 @@ var_label(dataset$nonfood2_monthly) <- "Dépenses à long terme non alimentaires
 
 #calculate food expenditure share and food expenditure share categories
 dataset  <- dataset  %>%  mutate(FoodExp_share =food_monthly / (food_monthly +nonfood1_monthly +nonfood2_monthly))
-var_label(dataset$FoodExp_share) <- "household food expenditure share"
+var_label(dataset$FoodExp_share) <- "part des dépenses alimentaires des ménages"
 dataset <- dataset %>% mutate(Foodexp_4pt = case_when(
   FoodExp_share <= .49 ~ 1,
   FoodExp_share >= .5 & FoodExp_share < .65 ~ 2,
@@ -40,7 +40,7 @@ dataset <- dataset %>% mutate(Foodexp_4pt = case_when(
 var_label(dataset$Foodexp_4pt) <- "catégories de répartition des dépenses alimentaires"
 
 #value labels
-val_labels(dataset$Foodexp_4pt) <- c("less than 50%" = 1, "between 50 and 65%" = 2, "between 65 and 75%" = 3, "greater than 75%" = 4)
+val_labels(dataset$Foodexp_4pt) <- c("moins de 50%" = 1, "entre 50 et 65%" = 2, "entre 65 et 75%" = 3, "plus de 75%" = 4)
 
 
 

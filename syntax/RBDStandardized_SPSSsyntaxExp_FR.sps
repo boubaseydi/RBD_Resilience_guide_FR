@@ -29,29 +29,37 @@ HHExpFDairy_1M_Own,HHExpFAnimEgg_1M_MN,HHExpFAnimEgg_1M_CRD,HHExpFAnimEgg_1M_Gif
 HHExpFBeverage_1M_MN,HHExpFBeverage_1M_CRD,HHExpFBeverage_1M_GiftAid,HHExpFBeverage_1M_Own,HHExpFOut_1M_MN,HHExpFOut_1M_CRD,HHExpFOut_1M_GiftAid,HHExpFOut_1M_Own).
 VARIABLE LABELS food_monthly 'Dépenses alimentaires du ménage au cours du mois'.
 EXECUTE.
+
 *compute 1 month short term nonfood expenses
 
 COMPUTE nonfood1_monthly=sum(HHExpNFHyg_1M_GiftAid,HHExpNFHyg_1M_MN,HHExpNFHyg_1M_CRD,HHExpNFTransp_1M_MN,HHExpNFTransp_1M_CRD,HHExpNFTransp_1M_GiftAid,HHExpNFWat_1M_MN,
 HHExpNFWat_1M_CRD,HHExpNFWat_1M_GiftAid,HHExpNFElec_1M_MN,HHExpNFElec_1M_CRD,HHExpNFElec_1M_GiftAid,HHExpNFEnerg_1M_MN,HHExpNFEnerg_1M_CRD,HHExpNFEnerg_1M_GiftAid,
 HHExpNFDwelServ_1M_MN,HHExpNFDwelServ_1M_CRD,HHExpNFDwelServ_1M_GiftAid,HHExpNFPhone_1M_MN,HHExpNFPhone_1M_CRD,HHExpNFPhone_1M_GiftAid,HHExpNFAlcTobac_1M_MN,HHExpNFAlcTobac_1M_CRD,
 HHExpNFAlcTobac_1M_GiftAid).
-VARIABLE LABELS nonfood1_monthly 'HH nonfood short term expenditures over month, '.
+VARIABLE LABELS nonfood1_monthly 'Dépenses à court terme non alimentaires des ménages au cours du mois '.
 EXECUTE.
+
 *compute 1 month longterm nonfood expenses
 
 COMPUTE nonfood2_monthly=sum(HHExpNFMedServ_6M_MN,HHExpNFMedServ_6M_CRD,HHExpNFMedServ_6M_GiftAid,HHExpNFMedGood_6M_MN,HHExpNFMedGood_6M_CRD,HHExpNFMedGood_6M_GiftAid,HHExpNFCloth_6M_MN,HHExpNFCloth_6M_CRD,
 HHExpNFCloth_6M_GiftAid,HHExpNFEduFee_6M_MN,HHExpNFEduFee_6M_CRD,HHExpNFEduFee_6M_GiftAid,HHExpNFEduGood_6M_MN,HHExpNFEduGood_6M_CRD,HHExpNFEduGood_6M_GiftAid,HHExpNFRent_6M_MN,
 HHExpNFRent_6M_CRD,HHExpNFRent_6M_GiftAid,HHExpNFHHSoft_6M_MN,HHExpNFHHSoft_6M_CRD,HHExpNFHHSoft_6M_GiftAid,HHExpNFSav_6M_Tot,HHExpNFDebt_6M_Tot,HHExpNFInsurance_6M_Tot)/6.
-VARIABLE LABELS nonfood2_monthly 'HH nonfood long term expenditures over month, '.
+VARIABLE LABELS nonfood2_monthly 'Dépenses à long terme non alimentaires des ménages au cours du mois'.
 EXECUTE.
+
 *compute food expenditure share and food expenditure share categories
 
 COMPUTE FoodExp_share= food_monthly/sum(food_monthly, nonfood1_monthly, nonfood2_monthly).
-VARIABLE LABELS FoodExp_share 'household food expenditure share'
+VARIABLE LABELS FoodExp_share 'part des dépenses alimentaires des ménages'
 
 RECODE FoodExp_share (Lowest thru .49=1) (.50 thru .649=2) (.65 thru .749=3) (.75 thru Highest=4)
  INTO Foodexp_4pt.
-VARIABLE LABELS Foodexp_4pt 'food expenditure share categories'.
+VARIABLE LABELS Foodexp_4pt 'catégories de répartition des dépenses alimentaires'.
 
-
+VALUE LABELS Foodexp_4pt
+1 'moins de 50%'
+2 'entre 50 et 65%'
+3 'entre 65 et 75%'
+4 'plus de 75%'.
+EXECUTE.
 
