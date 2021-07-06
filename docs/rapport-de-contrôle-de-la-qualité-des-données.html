@@ -261,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aperçu-des-étapes" class="section level2">
 <h2><span class="header-section-number">12.1</span> Aperçu des étapes</h2>
 <p>Télécharger une version .sav (spss) de l’ensemble de données à partir de Kobo/Ona/MoDa/ODK - utiliser <a href="https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav">exampledataFrancais_raw</a> as an example.</p>
-<p>Créez un dossier sur votre machine (“C :” est recommandé mais pas obligatoire) avec le nom de l’enquête (par exemple NGA_022021_EFSA) et créez un sous-dossier “1_RawData” et enregistrez votre ensemble de données SPSS dans le dossier “1_RawData”.</p>
+<p>Créez un dossier sur votre machine (“C :” est recommandé mais pas obligatoire) avec le nom de l’enquête (par exemple NGA_072021_PDM) et créez un sous-dossier “1_RawData” et enregistrez votre ensemble de données SPSS dans le dossier “1_RawData”.</p>
 <p>Ouvrez <a href="https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/example_dqmonitoring_FR.Rmd">example_dqmonitoring_FR</a>
 et vérifier que le code (ci-dessous) fait référence au nom correct du fichier et à l’emplacement du dossier.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb3-1"></a><span class="co">#set working directory </span></span>
@@ -269,7 +269,7 @@ et vérifier que le code (ci-dessous) fait référence au nom correct du fichier
 <span id="cb3-3"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb3-3"></a></span>
 <span id="cb3-4"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb3-4"></a><span class="co">#import dataset and call it &quot;dataset&quot;</span></span>
 <span id="cb3-5"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb3-5"></a>dataset &lt;-<span class="st"> </span><span class="kw">read_sav</span>(<span class="st">&quot;1_RawData/exampledataFrancais_raw.sav&quot;</span>)</span></code></pre></div>
-<p>En outre, si le nom de la variable des enquêteurs n’est pas “EnumName”, insérez le code suivant pour renommer la variable</p>
+<p>En outre, si le nom de la variable des enquêteurs n’est pas “EnumNamePDM”, insérez le code suivant pour renommer la variable</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb4-1"></a><span class="co">#standardized enumerator name variable</span></span>
 <span id="cb4-2"><a href="rapport-de-contrôle-de-la-qualité-des-données.html#cb4-2"></a>dataset &lt;-<span class="st"> </span>dataset <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">EnumNamePDM =</span> OLDNAMEOFENUMERATORVARIABLE) </span></code></pre></div>
 <p>Pour les calculs des groupes de consommation alimentaire - modifier le code pour utiliser “FCSCat21” pour les seuils 21/35 ou “FCSCat28” pour les seuils 28/42, selon le cas.</p>
