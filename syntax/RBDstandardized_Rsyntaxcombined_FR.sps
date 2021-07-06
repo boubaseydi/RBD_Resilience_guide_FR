@@ -1,87 +1,136 @@
+* Encoding: UTF-8.
 GET  FILE='exampledataFrancais_raw.sav'.
 DATASET NAME DataSet1 WINDOW=FRONT.
 
-*** calculate HHS
 
-*** recoder les questions de frequence en scores
-
-Recode HHhSNoFood_FR HHhSBedHung_FR HHhSNotEat_FR (1 = 1) (2=1) (3=2) (ELSE=0) INTO HHhSNoFood_FR_r HHhSBedHung_FR_r HHhSNotEat_FR_r.
-
-Variable labels HHhSNoFood_FR_r "Au cours des [4 derni√®res semaines/30 jours], n'y avait-il aucun aliment √† manger √† la maison, de quelque nature que ce soit √† cause du manque de ressources ? - recode".
-Variable labels HHhSBedHung_FR_r "Au cours des [4 derni√®res semaines/30 jours], √©tiez-vous ou tout membre de votre m√©nage oblig√© de dormir affam√© le soir parce qu‚Äôil n‚Äôy avait pas assez de nourriture ?  - recode".
-Variable labels HHhSNotEat_FR_r "Au cours des [4 derni√®res semaines/30 jours], avez-vous ou tout membre de votre m√©nage pass√© un jour et une nuit enti√®re sans rien manger parce qu‚Äôil n‚Äôy avait pas assez de nourriture ? - recode".
-
-*** additioner les questions recodes pour calculer le HHS
-
-Compute HHS = HHhSNoFood_FR_r + HHhSBedHung_FR_r + HHhSNotEat_FR_r.
-variable labels HHS "Indice domestique de la faim".
-
-*** chaque menage devrait avoir un score HHS entre 0 et 6
-
-FREQUENCIES VARIABLES = HHS
-/STATISTICS=MEAN MEDIAN MINIMUM MAXIMUM
-/ORDER=ANALYSIS.
-
-*** Creer HHS categorique
-
-RECODE HHS (0 thru 1=1) (2 thru 3=2) (4 thru Highest=3) INTO HHSCat.
-variable labels HHSCat "Cat√©gories de la faim dans les m√©nages".
-value labels HHSCat
-1 `Peu ou pas de faim dans le m√©nage`
-2 `Faim mod√©r√©e dans le m√©nage`
-3 `Faim s√©v√®re dans le m√©nage`.
-
-*** Calculer rCSI
-
-compute rCSI = sum(rCSILessQlty,rCSIBorrow*2,rCSIMealSize,rCSIMealAdult*3,rCSIMealNb).
-Variable labels rCSI "rCSI".
-
-*** chaque menage devrait avoir un rCSI entre 0 et 56
-
-FREQUENCIES VARIABLES =  rCSI
-/STATISTICS=MEAN MEDIAN MINIMUM MAXIMUM
-/ORDER=ANALYSIS.
-
-** calculer le Score de Consommation Alimentaire
+* calculer le Score de Consommation Alimentaire (FCS)
 
 compute FCS = sum(FCSStap*2, FCSPulse*3, FCSDairy*4, FCSPr*4, FCSVeg, FCSFruit, FCSFat*0.5, FCSSugar*0.5).
 variable labels FCS "Score de Consommation Alimentaire".
-
-** calculer  des groupes de consommation alimentaire √† partir du score de consommation alimentaire - seuils 21/35 et 28/42s
+EXECUTE.
+** calculer  des groupes de consommation alimentaire ‡ partir du score de consommation alimentaire - seuils 21/35 et 28/42s
 
 recode FCS (0 thru 21 = 1) (21 thru 35 = 2) (35 thru highest = 3) into FCSCat21.
 variable labels FCSCat21 "Groupes de Consommation Alimentaire - seuils 21/35".
 recode FCS (0 thru 28 = 1) (28 thru 42 = 2) (42 thru highest = 3) into FCSCat28.
 variable labels FCSCat28  "Groupes de Consommation Alimentaire  - seuils 28/42".
+EXECUTE.
 
-VALUE LABELS FCSCat21 FCSCat28
+VALUE LABELS FCSCat21 FCSCat28 
 1 "Pauvre"
 2 "Limite"
 3 "Acceptable".
+EXECUTE.
+*utiliser le seuil appropriÈ - 21 ou 28
 
-** calculate Score de diversit√© alimentaire des m√©nages
-
-*combine Meat questions
-
-compute HDDSPrMeat = sum(HDDSPrMeatF,HDDSPrMeatO).
-recode HDDSPrMeat (0=0) (1 thru highest = 1).
-
-*combine Vegetable questions
-
-compute HDDSVeg = sum(HDDSVegOrg,HDDSVegGre,HDDSVegOth).
-recode HDDSVeg (0=0) (1 thru highest = 1).
-
-*combine Fruit questions
-
-compute HDDSFruit = sum(HDDSFruitOrg,HDDSFruitOth).
-recode HDDSFruit (0=0) (1 thru highest = 1).
-
-compute HDDS = sum(HDDSStapCer,HDDSStapRoot,HDDSPulse,HDDSDairy,HDDSPrMeat,HDDSPrFish,
-HDDSPrEgg,HDDSVeg,HDDSFruit,HDDSFat,HDDSSugar,HDDSCond).
-variable labels HDDS "Score de diversit√© alimentaire des m√©nages".
+RECODE FCSCat28 (1=4) (2=3) (3=1) INTO FCS_4pt.
+VARIABLE LABELS FCS_4pt '4pt FCG'.
+EXECUTE.
 
 
-***calculate Livelihood Coping Stragegies
+* Define Variable Properties.
+*FCS_4pt.
+VALUE LABELS FCS_4pt
+ 1.00 'acceptable'
+ 3.00 'limite'
+ 4.00 'pauvre'.
+EXECUTE.
+
+** calculate Score de Consommation Alimentaire Nutrition (FCS-N)
+
+compute FGVitA = sum(FCSDairy, FCSPrMeatO, FCSPrEgg, FCSVegOrg, FCSVegGre, FCSFruitOrg).
+variable labels FGVitA "Consommation d'aliments riches en vitamine A".
+compute FGProtein = sum(FCSPulse, FCSDairy, FCSPrMeatF, FCSPrMeatO, FCSPrFish, FCSPrEgg).
+variable labels FGProtein "Consommation d'aliments riches en protiÈine".
+compute FGHIron = sum(FCSPrMeatF, FCSPrMeatO, FCSPrFish).
+variable labels FGHIron "Consommation d'aliments riches en fer".
+EXECUTE.
+*** recoder en groupes basÈs sur la consommation 
+
+RECODE FGVitA (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGVitACat.
+variable labels FGVitACat "Consommation d'aliments riches en vitamine A".
+RECODE FGProtein (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGProteinCat.
+variable labels FGProteinCat "Consommation d'aliments riches en protiÈine".
+RECODE FGHIron (0=1) (1 thru 6=2) (7 thru 42=3) INTO FGHIronCat.
+variable labels  FGHIronCat "Consommation d'aliments riches en fer".
+EXECUTE.
+*** define variables labels and properties for " FGVitACat FGProteinCat FGHIronCat ".
+
+VALUE LABELS FGVitACat FGProteinCat FGHIronCat
+1.00 '0 jours'
+2.00 '1-6 jours'
+3.00 '7 jours'.
+EXECUTE.
+
+*DÈpenses 
+*recod all missing (NA) to zero
+
+RECODE HHExpFCer_1M_MN HHExpFCer_1M_CRD HHExpFCer_1M_GiftAid HHExpFCer_1M_Own HHExpFTub_1M_MN HHExpFTub_1M_CRD HHExpFTub_1M_GiftAid HHExpFTub_1M_Own HHExpFPuls_1M_MN 
+HHExpFPuls_1M_CRD HHExpFPuls_1M_GiftAid HHExpFPuls_1M_Own HHExpFVeg_1M_MN HHExpFVeg_1M_CRD HHExpFVeg_1M_GiftAid HHExpFVeg_1M_Own HHExpFFrt_1M_MN HHExpFFrt_1M_CRD 
+HHExpFFrt_1M_GiftAid HHExpFFrt_1M_Own HHExpFAnimMeat_1M_MN HHExpFAnimMeat_1M_CRD HHExpFAnimMeat_1M_GiftAid HHExpFAnimMeat_1M_Own HHExpFAnimFish_1M_MN HHExpFAnimFish_1M_CRD 
+HHExpFAnimFish_1M_GiftAid HHExpFAnimFish_1M_Own HHExpFFats_1M_MN HHExpFFats_1M_CRD HHExpFFats_1M_GiftAid HHExpFFats_1M_Own HHExpFDairy_1M_MN HHExpFDairy_1M_CRD HHExpFDairy_1M_GiftAid 
+HHExpFDairy_1M_Own HHExpFAnimEgg_1M_MN HHExpFAnimEgg_1M_CRD HHExpFAnimEgg_1M_GiftAid HHExpFAnimEgg_1M_Own HHExpFSgr_1M_MN HHExpFSgr_1M_CRD HHExpFSgr_1M_GiftAid HHExpFSgr_1M_Own 
+HHExpFBeverage_1M_MN HHExpFBeverage_1M_CRD HHExpFBeverage_1M_GiftAid HHExpFBeverage_1M_Own HHExpFOut_1M_MN HHExpFOut_1M_CRD HHExpFOut_1M_GiftAid HHExpFOut_1M_Own 
+HHExpNFHyg_1M_GiftAid HHExpNFHyg_1M_MN HHExpNFHyg_1M_CRD HHExpNFTransp_1M_MN HHExpNFTransp_1M_CRD HHExpNFTransp_1M_GiftAid HHExpNFWat_1M_MN 
+HHExpNFWat_1M_CRD,HHExpNFWat_1M_GiftAid,HHExpNFElec_1M_MN,HHExpNFElec_1M_CRD,HHExpNFElec_1M_GiftAid,HHExpNFEnerg_1M_MN,HHExpNFEnerg_1M_CRD,HHExpNFEnerg_1M_GiftAid,
+HHExpNFDwelServ_1M_MN,HHExpNFDwelServ_1M_CRD,HHExpNFDwelServ_1M_GiftAid,HHExpNFPhone_1M_MN,HHExpNFPhone_1M_CRD,HHExpNFPhone_1M_GiftAid,HHExpNFAlcTobac_1M_MN,HHExpNFAlcTobac_1M_CRD,
+HHExpNFAlcTobac_1M_GiftAid HHExpNFMedServ_6M_MN,HHExpNFMedServ_6M_CRD,HHExpNFMedServ_6M_GiftAid,HHExpNFMedGood_6M_MN,HHExpNFMedGood_6M_CRD,HHExpNFMedGood_6M_GiftAid,HHExpNFCloth_6M_MN,HHExpNFCloth_6M_CRD,
+HHExpNFCloth_6M_GiftAid,HHExpNFEduFee_6M_MN,HHExpNFEduFee_6M_CRD,HHExpNFEduFee_6M_GiftAid,HHExpNFEduGood_6M_MN,HHExpNFEduGood_6M_CRD,HHExpNFEduGood_6M_GiftAid,HHExpNFRent_6M_MN,
+HHExpNFRent_6M_CRD,HHExpNFRent_6M_GiftAid,HHExpNFHHSoft_6M_MN,HHExpNFHHSoft_6M_CRD,HHExpNFHHSoft_6M_GiftAid,HHExpNFSav_6M_Tot,HHExpNFDebt_6M_Tot,HHExpNFInsurance_6M_Tot(SYSMIS=0).
+EXECUTE.
+
+*compute 1 month food expenses
+
+COMPUTE food_monthly=sum(HHExpFCer_1M_MN,HHExpFCer_1M_CRD,HHExpFCer_1M_GiftAid,HHExpFCer_1M_Own,HHExpFTub_1M_MN,HHExpFTub_1M_CRD,HHExpFTub_1M_GiftAid,HHExpFTub_1M_Own,HHExpFPuls_1M_MN,
+HHExpFPuls_1M_CRD,HHExpFPuls_1M_GiftAid,HHExpFPuls_1M_Own,HHExpFVeg_1M_MN,HHExpFVeg_1M_CRD,HHExpFVeg_1M_GiftAid,HHExpFVeg_1M_Own,HHExpFFrt_1M_MN,HHExpFFrt_1M_CRD,
+HHExpFFrt_1M_GiftAid,HHExpFFrt_1M_Own,HHExpFAnimMeat_1M_MN,HHExpFAnimMeat_1M_CRD,HHExpFAnimMeat_1M_GiftAid,HHExpFAnimMeat_1M_Own,HHExpFAnimFish_1M_MN,HHExpFAnimFish_1M_CRD,
+HHExpFAnimFish_1M_GiftAid,HHExpFAnimFish_1M_Own,HHExpFFats_1M_MN,HHExpFFats_1M_CRD,HHExpFFats_1M_GiftAid,HHExpFFats_1M_Own,HHExpFDairy_1M_MN,HHExpFDairy_1M_CRD,HHExpFDairy_1M_GiftAid,
+HHExpFDairy_1M_Own,HHExpFAnimEgg_1M_MN,HHExpFAnimEgg_1M_CRD,HHExpFAnimEgg_1M_GiftAid,HHExpFAnimEgg_1M_Own,HHExpFSgr_1M_MN,HHExpFSgr_1M_CRD,HHExpFSgr_1M_GiftAid,HHExpFSgr_1M_Own,
+HHExpFBeverage_1M_MN,HHExpFBeverage_1M_CRD,HHExpFBeverage_1M_GiftAid,HHExpFBeverage_1M_Own,HHExpFOut_1M_MN,HHExpFOut_1M_CRD,HHExpFOut_1M_GiftAid,HHExpFOut_1M_Own).
+VARIABLE LABELS food_monthly 'DÈpenses alimentaires du mÈnage au cours du mois'.
+EXECUTE.
+
+*compute 1 month short term nonfood expenses
+
+COMPUTE nonfood1_monthly=sum(HHExpNFHyg_1M_GiftAid,HHExpNFHyg_1M_MN,HHExpNFHyg_1M_CRD,HHExpNFTransp_1M_MN,HHExpNFTransp_1M_CRD,HHExpNFTransp_1M_GiftAid,HHExpNFWat_1M_MN,
+HHExpNFWat_1M_CRD,HHExpNFWat_1M_GiftAid,HHExpNFElec_1M_MN,HHExpNFElec_1M_CRD,HHExpNFElec_1M_GiftAid,HHExpNFEnerg_1M_MN,HHExpNFEnerg_1M_CRD,HHExpNFEnerg_1M_GiftAid,
+HHExpNFDwelServ_1M_MN,HHExpNFDwelServ_1M_CRD,HHExpNFDwelServ_1M_GiftAid,HHExpNFPhone_1M_MN,HHExpNFPhone_1M_CRD,HHExpNFPhone_1M_GiftAid,HHExpNFAlcTobac_1M_MN,HHExpNFAlcTobac_1M_CRD,
+HHExpNFAlcTobac_1M_GiftAid).
+VARIABLE LABELS nonfood1_monthly 'DÈpenses ‡ court terme non alimentaires des mÈnages au cours du mois '.
+EXECUTE.
+
+*compute 1 month longterm nonfood expenses
+
+COMPUTE nonfood2_monthly=sum(HHExpNFMedServ_6M_MN,HHExpNFMedServ_6M_CRD,HHExpNFMedServ_6M_GiftAid,HHExpNFMedGood_6M_MN,HHExpNFMedGood_6M_CRD,HHExpNFMedGood_6M_GiftAid,HHExpNFCloth_6M_MN,HHExpNFCloth_6M_CRD,
+HHExpNFCloth_6M_GiftAid,HHExpNFEduFee_6M_MN,HHExpNFEduFee_6M_CRD,HHExpNFEduFee_6M_GiftAid,HHExpNFEduGood_6M_MN,HHExpNFEduGood_6M_CRD,HHExpNFEduGood_6M_GiftAid,HHExpNFRent_6M_MN,
+HHExpNFRent_6M_CRD,HHExpNFRent_6M_GiftAid,HHExpNFHHSoft_6M_MN,HHExpNFHHSoft_6M_CRD,HHExpNFHHSoft_6M_GiftAid,HHExpNFSav_6M_Tot,HHExpNFDebt_6M_Tot,HHExpNFInsurance_6M_Tot)/6.
+VARIABLE LABELS nonfood2_monthly 'DÈpenses ‡ long terme non alimentaires des mÈnages au cours du mois'.
+EXECUTE.
+
+*compute food expenditure share and food expenditure share categories
+
+COMPUTE FoodExp_share= food_monthly/sum(food_monthly, nonfood1_monthly, nonfood2_monthly).
+VARIABLE LABELS FoodExp_share 'part des dÈpenses alimentaires des mÈnages'
+EXECUTE.
+
+RECODE FoodExp_share (Lowest thru .49=1) (.50 thru .649=2) (.65 thru .749=3) (.75 thru Highest=4)
+ INTO Foodexp_4pt.
+VARIABLE LABELS Foodexp_4pt 'catÈgories de rÈpartition des dÈpenses alimentaires'.
+EXECUTE.
+
+VALUE LABELS Foodexp_4pt
+1 'moins de 50%'
+2 'entre 50 et 65%'
+3 'entre 65 et 75%'
+4 'plus de 75%'.
+EXECUTE.
+
+*** Calculer rCSI
+
+compute rCSI = sum(rCSILessQlty,rCSIBorrow*2,rCSIMealSize,rCSIMealAdult*3,rCSIMealNb).
+Variable labels rCSI "rCSI".
+EXECUTE.
+*** calculate Livelihood Coping Stragegies
 ** creer une variable  pour montrer si les strategies de stress etaient  "Oui"" ou "Non, parce que j‚Äôai d√©j√† vendu ces actifs ou men√© cette activit√© au cours des 12 derniers mois et je ne peux pas continuer √† le faire"
 
 do if (LhCSIStress1 = 2) | (LhCSIStress1 = 3) |
@@ -92,11 +141,11 @@ compute stress_coping = 1.
 ELSE.
 compute stress_coping = 0.
 end if.
-variable labels stress_coping "le m√©nage s'est-il engag√© dans des strat√©gies  du stress ?".
+variable labels stress_coping "le mÈnage s'est-il engagÈ dans des stratÈgies  du stress ?".
 value labels stress_coping
 0 "Non"
 1 "Oui".
-
+EXECUTE.
 *** creer une variable  pour montrer si les strategies de crises etaient  "Oui"" ou "Non, parce que j‚Äôai d√©j√† vendu ces actifs ou men√© cette activit√© au cours des 12 derniers mois et je ne peux pas continuer √† le faire"
 
 do if (LhCSICrisis1 = 2) | (LhCSICrisis1 = 3) |
@@ -106,10 +155,11 @@ compute crisis_coping = 1.
 ELSE.
 compute crisis_coping = 0.
 end if.
-variable labels crisis_coping "le m√©nage s'est-il engag√© dans des strat√©gies d'adaptation aux crises ?".
+variable labels crisis_coping "le mÈnage s'est-il engagÈ dans des stratÈgies d'adaptation aux crises ?".
 value labels crisis_coping
 0 "Non"
 1 "Oui".
+EXECUTE.
 
 *** creer une variable  pour montrer si les strategies de urgences etaient  "Oui"" ou "Non, parce que j‚Äôai d√©j√† vendu ces actifs ou men√© cette activit√© au cours des 12 derniers mois et je ne peux pas continuer √† le faire"
 
@@ -120,10 +170,11 @@ compute emergency_coping = 1.
 ELSE.
 compute emergency_coping = 0.
 end if.
-variable labels emergency_coping "le m√©nage s'est-il engag√© dans des strat√©gies d'adaptation d'urgence ?".
+variable labels emergency_coping "le mÈnage s'est-il engagÈ dans des stratÈgies d'adaptation d'urgence ?".
 value labels emergency_coping
 0 "Non"
 1 "Oui".
+EXECUTE.
 
 *** recoder les variables pour calculer une variable de la strat√©gie d'adaptation la plus s√©v√®re utilis√©e
 
@@ -135,10 +186,26 @@ compute LhCSICat=max(stress_coping, crisis_coping, emergency_coping).
 recode LhCSICat (0=1).
 
 Value labels LhCSICat 1 "Pasdestrategies" 2 "StrategiesdeStress" 3 "StrategiesdeCrise" 4 "StrategiesdUrgence".
-Variable Labels LhCSICat = "Cat√©gories de strat√©gies d'adaptation aux moyens d'existence - version l√©ger  de CARI".
+Variable Labels LhCSICat "CatÈgories de stratÈgies d'adaptation aux moyens d'existence - version lÈger  de CARI".
+EXECUTE.
 
+*** Calculate CARI 
 
+COMPUTE Mean_coping_capacity=MEAN(LhCSICat, Foodexp_4pt).
+EXECUTE.
+COMPUTE FS_class_unrounded=MEAN(FCS_4pt,Mean_coping_capacity).
+EXECUTE.
+COMPUTE FS_final=RND(FS_class_unrounded).
+EXECUTE.
 
+* Define Variable Properties.
+
+VALUE LABELS FS_final
+ 1.00 'sÈcuritÈ alimentaire'
+ 2.00 'sÈcuritÈ alimentaire marginale'
+ 3.00 'insÈcuritÈ alimentaire modÈrÈe'
+ 4.00 'insÈcuritÈ alimentaire sÈvËre'.
+EXECUTE.
 
 
 
