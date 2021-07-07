@@ -2,7 +2,7 @@
 
 Les chapitres précédents ont illustré les questionnaires et la syntaxe indicateur par indicateur, module par module.
 
-Ce chapitre contient une version combinée de tous les modules/indicateurs recommandés des chapitres 3 à 8 ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.  Les indicateurs optionnels spécifiques à la résilience n'ont pas été inclus dans ce questionnaire combiné.  Les pays peuvent ajouter les modules spécifiques à la mesure de la résilience à leur questionnaire selon leurs besoins.
+Ce chapitre contient une version combinée de tous les modules/indicateurs recommandés des chapitres 3 à 9 ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.  Les indicateurs optionnels spécifiques à la résilience n'ont pas été inclus dans ce questionnaire combiné.  
 
 Le questionnaire suivant contient les questions standardisées et les modules recommandés mais il n'est pas exhaustif (les pays voudront probablement collecter des questions supplémentaires en plus).  Utilisateurs peuvent soit utiliser ce questionnaire et le compléter, soit copier ces questions (y compris la feuille de *choix*) dans leurs questionnaires/xlsforms.
 

@@ -1,10 +1,31 @@
 # Nouveaux indicateurs de résilience
 
-Des indicateurs/questions de résilience sont en cours de développement - contactez rbd.ram@wfp.org pour plus d'informations.
+Les ressources ci-dessous illustrent les questions et les indicateurs spécifiques à la résilience.
 
-``` {r, echo = FALSE}
-knitr::include_graphics(rep("images/construction.png"))
-```
+## Références / Ressources
 
 
+## Questionnaire standardisé
 
+
+### Version papier du questionnaire
+
+Voici le module standardisé en format Word :
+[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.docx?raw=true) 
+
+### Version électronique du questionnaire
+
+Voici le module standardisé en format xlsform :
+[RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.xlsx?raw=true) 
+
+
+## Calcul de l'indicateur rCSI
+
+### Exemple d'ensemble de données
+
+Voici l'exemple d'un ensemble de données brutes :  
+[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
+
+### SPSS Syntax & R Syntax
+
+Contactez rbd.ram@wfp.org pour toute question concernant le calcul/rapport de ces questions/indicateurs.
