@@ -2,7 +2,7 @@
 
 Les chapitres précédents ont illustré les questionnaires et la syntaxe indicateur par indicateur, module par module.
 
-Ce chapitre contient une version combinée de tous les modules/indicateurs recommandés des chapitres 3 à 9 ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.  Les indicateurs optionnels spécifiques à la résilience n'ont pas été inclus dans ce questionnaire combiné.  
+Ce chapitre contient une version combinée de tous les modules/indicateurs des chapitres 3 à 9 ainsi que les variables techniques/démographiques recommandées (comme le sexe du chef de ménage) à inclure au début du questionnaire.  
 
 Le questionnaire suivant contient les questions standardisées et les modules recommandés mais il n'est pas exhaustif (les pays voudront probablement collecter des questions supplémentaires en plus).  Utilisateurs peuvent soit utiliser ce questionnaire et le compléter, soit copier ces questions (y compris la feuille de *choix*) dans leurs questionnaires/xlsforms.
 
@@ -27,7 +27,7 @@ Voici le fichier syntaxique R combiné pour le calcul des  indicateurs FCS/FCSN,
 
 [RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.sps) 
 
-*Note - on cherche toujours un moyen de créer des variables ADMIN1Code & ADMIN2Code à partir des variables ADMIN1Name & ADMIN2Name dans SPSS*
+*La syntaxe MDDW et MAD n'est pas incluse.*
 
 
 ### R Syntax
@@ -36,5 +36,5 @@ Voici le fichier syntaxique R combiné pour le calcul des  indicateurs -FCS/FCSN
 
 [RBDstandardized_Rsyntaxcombined_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_Rsyntaxcombined_FR.R) 
 
-
+*La syntaxe MDDW et MAD n'est pas incluse.*
 
