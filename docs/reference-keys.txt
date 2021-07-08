@@ -55,7 +55,8 @@ références-ressources-5
 version-papier-du-questionnaire-5
 version-électronique-du-questionnaire-5
 nouveaux-indicateurs-de-résilience
-références-ressources-6
+logique
+ressources-pour-indicateurs-complémentaires
 questionnaire-standardisé-2
 version-papier-du-questionnaire-6
 version-électronique-du-questionnaire-6
