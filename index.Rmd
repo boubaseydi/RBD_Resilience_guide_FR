@@ -55,8 +55,6 @@ Pour ce guide, deux ensembles de données "semi-fictives" ont été créés en s
 
 [exampledataFrancais_raw](https://wfp-vam.github.io/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true) - est ce à quoi devrait ressembler un ensemble de données "brutes" lorsqu'elles sont collectées avec des modules standardisés et téléchargées à partir d'un serveur ODK au format spss.
 
-[exampledataFrancais_processed](https://wfp-vam.github.io/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_processed.sav?raw=true) - est ce à quoi devrait ressembler une "donnée traitée" lorsqu'on applique une syntaxe normalisée pour calculer des indicateurs et ajouter des ponderation. 
-
 ### À propos des questionnaires et des noms de variables
 
 Les questionnaires standardisés ont été élaborés à partir des références officielles énumérées dans les chapitres et ont été adaptés en tenant compte de la consultation de plusieurs analystes de la sécurité alimentaire et 
