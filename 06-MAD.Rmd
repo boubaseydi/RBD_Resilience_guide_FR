@@ -32,3 +32,16 @@ Voici le module standardisé sous xlsform :
 
 [RBDstandardized_questionnaire_MAD_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_MAD_FR.xlsx?raw=true) 
 
+## Calcul de l'indicateur MAD
+
+### Exemple d'ensemble de données
+
+Voici l'exemple d'un ensemble de données brutes :  
+[HHSize1549F_MDDW_rpt](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampleMDDWdataFrancais_raw/HHSize1549F_MDDW_rpt.sav?raw=true)  
+
+### SPSS Syntax
+
+![ ](images/construction.png) *la syntaxe n'a pas encore été validée*
+
+Voici le fichier de syntaxe SPSS : 
+[RBDStandardized_SPSSsyntaxMDDW_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxMDDW_FR.sps) 

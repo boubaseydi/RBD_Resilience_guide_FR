@@ -50,10 +50,16 @@ diversite-alimentaire-des-femmes-mdd-w
 références-ressources-4
 version-papier-du-questionnaire-4
 version-électronique-du-questionnaire-4
+calcul-de-lindicateur-mmdw
+exemple-densemble-de-données-3
+spss-syntax-4
 régime-alimentaire-minimum-acceptable-mad
 références-ressources-5
 version-papier-du-questionnaire-5
 version-électronique-du-questionnaire-5
+calcul-de-lindicateur-mad
+exemple-densemble-de-données-4
+spss-syntax-5
 nouveaux-indicateurs-de-résilience
 logique
 ressources-pour-indicateurs-complémentaires
@@ -61,7 +67,7 @@ questionnaire-standardisé-2
 version-papier-du-questionnaire-6
 version-électronique-du-questionnaire-6
 calcul-de-lindicateur-rcsi-1
-exemple-densemble-de-données-3
+exemple-densemble-de-données-5
 spss-syntax-r-syntax
 gecodes
 un-exemple-simple-du-problème
@@ -71,7 +77,7 @@ notes
 questionnaire-combiné-syntaxes-combiné
 version-papier-du-questionnaire-7
 version-électronique-du-questionnaire-7
-spss-syntax-4
+spss-syntax-6
 r-syntax-4
 rapport-de-contrôle-de-la-qualité-des-données
 aperçu-des-étapes
