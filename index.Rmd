@@ -60,7 +60,7 @@ Pour ce guide, deux ensembles de données "semi-fictives" ont été créés en s
 Les questionnaires standardisés ont été élaborés à partir des références officielles énumérées dans les chapitres et ont été adaptés en tenant compte de la consultation de plusieurs analystes de la sécurité alimentaire et 
 la nutrition.  Alors que de nombreuses questions de ce guide ont été reprises mot pour mot des références officielles, la formulation de certains modules de questions suit l'opinion selon laquelle le fait de demander aux enquêteurs de répéter le contenu d'une question telle que la période de rappel (c'est-à-dire au cours des 7 derniers jours...) et le qualificatif (... par manque de nourriture ou d'argent pour acheter de la nourriture) explicitement dans le texte de la question est une meilleure pratique que de demander aux enquêteurs de lire le texte d'introduction (c'est-à-dire Au cours des 7 derniers jours, par manque de nourriture, avez-vous dû utiliser les stratégies suivantes...) et ensuite lire une liste de produits alimentaires/stratégies.
 
-Les noms de variables figurant dans ce guide ont été largement copiés à partir d'un projet de livre de code maître qui est à venir. 
+Les noms de variables figurant dans ce guide ont été largement copiés à partir d'un projet "master codebook" qui est à venir. 
 
 ### À propos du style de programmation en R
 
@@ -111,7 +111,7 @@ library(tidyverse)
 
 ## Utilisation de Rmarkdown
 
-Nous utiliserons R Markdown pour générer les rapports des chapitres 9 et 11.  La vidéo ci-dessous donne une introduction et une vue d'ensemble de R markdown.
+Nous utiliserons R Markdown pour générer les Rapport de contrôle de la qualité des données - au chapitre 12.  La vidéo ci-dessous donne une introduction et une vue d'ensemble de R markdown.
 
 <iframe width="750" height="400" src="https://www.youtube.com/embed/FO6Jo3Y9knk" frameborder="0" allowfullscreen></iframe>
 

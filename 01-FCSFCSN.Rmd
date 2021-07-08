@@ -39,11 +39,11 @@ Voici l'exemple d'un ensemble de données brutes :
 ### SPSS Syntax
 
 Voici le fichier de syntaxe SPSS : 
-[RBDStandardized_SPSSsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSFCSN_FR.sps) 
+[RBDStandardized_SPSSsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDStandardized_SPSSsyntaxFCSFCSN_FR.sps?raw=true) 
 
 ### R Syntax
 
 Voici le fichier de syntaxe R : 
-[RBDstandardized_RsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxFCSFCSN_FR.R) 
+[RBDstandardized_RsyntaxFCSFCSN_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_RsyntaxFCSFCSN_FR.R?raw=true) 
 
 
