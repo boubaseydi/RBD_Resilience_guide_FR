@@ -66,9 +66,8 @@ ressources-pour-indicateurs-complémentaires
 questionnaire-standardisé-2
 version-papier-du-questionnaire-6
 version-électronique-du-questionnaire-6
-calcul-de-lindicateur-rcsi-1
-exemple-densemble-de-données-5
-spss-syntax-r-syntax
+calcul-dindicateurs-de-résilience
+spss-syntax-6
 gecodes
 un-exemple-simple-du-problème
 où-trouver-les-codes-pcodes-et-plus-de-détails
@@ -77,7 +76,7 @@ notes
 questionnaire-combiné-syntaxes-combiné
 version-papier-du-questionnaire-7
 version-électronique-du-questionnaire-7
-spss-syntax-6
+spss-syntax-7
 r-syntax-4
 rapport-de-contrôle-de-la-qualité-des-données
 aperçu-des-étapes

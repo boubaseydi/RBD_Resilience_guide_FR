@@ -34,13 +34,18 @@ Voici le module standardisé en format xlsform :
 [RBDstandardized_questionnaire_resilience](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/questionnaires/RBDstandardized_questionnaire_resilience.xlsx?raw=true) 
 
 
-## Calcul de l'indicateur rCSI
+## Calcul d'indicateurs de résilience
 
-### Exemple d'ensemble de données
 
-Voici l'exemple d'un ensemble de données brutes :  
-[exampledataFrancais_raw](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/example_datasets/exampledataFrancais_raw.sav?raw=true)  
+### SPSS Syntax
 
-### SPSS Syntax & R Syntax
+Voici le fichier de syntaxe SPSS les syntaxes SPSS des indicateurs additionnels de résilience suivants :  
 
-Contactez rbd.ram@wfp.org pour toute question concernant le calcul/rapport de ces questions/indicateurs.
+* Self evaluated resilience score (SERS) 
+* Shock exposure index
+* Ability to recover index 
+* Social capital index (Bonding social capital index, Bridging social capital)
+ 
+[RBDstandardized_SPSSresilience_FR](https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/syntax/RBDstandardized_SPSSresilience_FR.sps) 
+
+Pour des informations sur le calcul d'autres indicateurs de résilience  ou sur toute question concernant ces modules, contactez rbd.ram@wfp.org .
