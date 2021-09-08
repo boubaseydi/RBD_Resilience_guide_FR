@@ -24,17 +24,16 @@ setwd("C:/exampledq_monitoring_FR")
 #import dataset and call it "dataset"
 dataset <- read_sav("1_RawData/exampledataFrancais_raw.sav")
 
-#convert into labels for all variables
-dataset <- to_factor(dataset)
-
-#change back to value to prevent showing operators name
-dataset$EnumNamePDM <- to_labelled(dataset$EnumNamePDM)
+#convert into labels for all variables except enumerator (because we dont want to show enumerators actual name)
+dataset <- dataset %>% set_value_labels(EnumNamePDM = NULL) %>% to_factor()
+#make EnumName character
+dataset$EnumNamePDM <- as.character(dataset$EnumNamePDM)
 
 #Survey Progress
 countsadm1table <- dataset %>% group_by(ADMIN1Name) %>%  count()
 countsenumtable <- dataset %>% group_by(ADMIN1Name, EnumNamePDM) %>%  count() %>% arrange(desc(`n`))
 adm1_graph <- countsadm1table %>% ggplot(aes(x = ADMIN1Name, y = n)) +geom_bar(stat = "identity", fill = "steel blue") +theme_minimal()  +labs(x = "", y = "")
-adm1enum_graph <- countsenumtable %>% ggplot(aes(x = as.character(EnumNamePDM), y = n)) +geom_bar(stat = "identity", fill = "steel blue") +theme_minimal()  +facet_wrap(. ~ ADMIN1Name, scales = "free_x") +labs(x = "", y = "") +theme(axis.text.x=element_blank())
+adm1enum_graph <- countsenumtable %>% ggplot(aes(x = EnumNamePDM, y = n)) +geom_bar(stat = "identity", fill = "steel blue") +theme_minimal()  +facet_wrap(. ~ ADMIN1Name, scales = "free_x") +labs(x = "", y = "") +theme(axis.text.x=element_blank())
 
 #Food Consumption Score
 #calculate FCS
@@ -52,7 +51,7 @@ FCGadm1table <- dataset %>% group_by(ADMIN1Name) %>%  count(FCSCat28) %>% mutate
 FCGadm1_barplot <- FCGadm1table %>% ggplot(aes(x=ADMIN1Name, y = perc, fill = FCSCat28)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=fcg_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free_x")  +labs(x = "", y = "") +scale_y_continuous(labels = scales::percent)
 #FCG by Adm1 and EnumNamePDM
 FCGEnumNametable <- dataset %>% group_by(EnumNamePDM, ADMIN1Name) %>%  count(FCSCat28) %>% mutate(perc = 100 * n / sum(n)) %>% ungroup() %>% select(-n) %>% mutate_if(is.numeric, round, 1)
-FCGadm1EnumName_barplot <- FCGEnumNametable %>% ggplot(aes(x=as.character(EnumNamePDM), y = perc, fill = FCSCat28)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=fcg_colors) + facet_wrap(ADMIN1Name ~ ., scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
+FCGadm1EnumName_barplot <- FCGEnumNametable %>% ggplot(aes(x=EnumNamePDM, y = perc, fill = FCSCat28)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=fcg_colors) + facet_wrap(ADMIN1Name ~ ., scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
 
 #Expenditures
 ## EXPENDITURES
@@ -84,9 +83,9 @@ nonfoodexpADMIN1_table <- dataset %>% group_by(ADMIN1Name) %>% summarise(median_
 nonfoodexpADMIN1Enum_table <- dataset %>% group_by(ADMIN1Name, EnumNamePDM) %>% summarise(median_nonfoodexp = median(nonfood_monthly))
 #graphs
 foodexpADMIN1_bargraph <- foodexpADMIN1_table %>% ggplot(aes(x = ADMIN1Name, y = median_foodexp)) +geom_bar(stat = "identity", fill = "steel blue")
-foodexpADMIN1Enum_bargraph <- foodexpADMIN1Enum_table %>% ggplot(aes(x = as.character(EnumNamePDM), y = median_foodexp)) +geom_bar(stat = "identity", fill = "steel blue") +facet_grid(. ~ ADMIN1Name, scales = "free_x")  +theme_minimal() +theme(axis.text.x = element_text(angle = 90))
+foodexpADMIN1Enum_bargraph <- foodexpADMIN1Enum_table %>% ggplot(aes(x = EnumNamePDM, y = median_foodexp)) +geom_bar(stat = "identity", fill = "steel blue") +facet_grid(. ~ ADMIN1Name, scales = "free_x")  +theme_minimal() +theme(axis.text.x = element_text(angle = 90))
 nonfoodexpADMIN1_bargraph <- nonfoodexpADMIN1_table %>% ggplot(aes(x = ADMIN1Name, y = median_nonfoodexp)) +geom_bar(stat = "identity", fill = "steel blue")
-nonfoodexpADMIN1Enum_bargraph <- nonfoodexpADMIN1Enum_table %>% ggplot(aes(x = as.factor(EnumNamePDM), y = median_nonfoodexp)) +geom_bar(stat = "identity", fill = "steel blue") +facet_grid(. ~ ADMIN1Name, scales = "free_x") +theme_minimal() +theme(axis.text.x = element_text(angle = 90))
+nonfoodexpADMIN1Enum_bargraph <- nonfoodexpADMIN1Enum_table %>% ggplot(aes(x = EnumNamePDM, y = median_nonfoodexp)) +geom_bar(stat = "identity", fill = "steel blue") +facet_grid(. ~ ADMIN1Name, scales = "free_x") +theme_minimal() +theme(axis.text.x = element_text(angle = 90))
 
 
 #reduced Coping Strategy Index
@@ -105,7 +104,7 @@ rCSIphaseadm1table <- dataset %>% group_by(ADMIN1Name) %>%  count(rCSI_CH) %>% m
 rCSIadm1_barplot <- rCSIphaseadm1table %>% ggplot(aes(x=ADMIN1Name, y = perc, fill = rCSI_CH)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=rCSI_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free_x") +labs(x = "", y = "") +scale_y_continuous(labels = scales::percent)
 #FCG by Adm2 and EnumName
 rCSIEnumNametable <- dataset %>% group_by(EnumNamePDM, ADMIN1Name) %>%  count(rCSI_CH) %>% mutate(perc = 100 * n / sum(n)) %>% ungroup() %>% select(-n) %>% mutate_if(is.numeric, round, 1)
-rCSIadm1EnumName_barplot <- rCSIEnumNametable %>% ggplot(aes(x=as.character(EnumNamePDM), y = perc, fill = rCSI_CH)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=rCSI_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
+rCSIadm1EnumName_barplot <- rCSIEnumNametable %>% ggplot(aes(x=EnumNamePDM, y = perc, fill = rCSI_CH)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=rCSI_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
 
 ###Calculate LHCS
 # parce que le texte est très long dans les questions - voir si la réponse a été tronquée - parce qu'il sera difficile de faire correspondre le texte exact
@@ -159,7 +158,7 @@ LHCSadm1table <- dataset %>% group_by(ADMIN1Name) %>%  count(LhCSICat) %>% mutat
 LHCSadm1_barplot <- LHCSadm1table %>% ggplot(aes(x=ADMIN1Name, y = perc, fill = LhCSICat)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=LHCS_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free_x") +labs(x = "", y = "") +scale_y_continuous(labels = scales::percent)
 #LHCS by Adm1 and EnumName
 LHCSadm1EnumNametable <- dataset %>% group_by(EnumNamePDM,  ADMIN1Name) %>%  count(LhCSICat) %>% mutate(perc = 100 * n / sum(n)) %>% ungroup() %>% select(-n) %>% mutate_if(is.numeric, round, 1)
-LHCSadm1EnumName_barplot <- LHCSadm1EnumNametable %>% ggplot(aes(x=as.character(EnumNamePDM), y = perc, fill = LhCSICat)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=LHCS_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
+LHCSadm1EnumName_barplot <- LHCSadm1EnumNametable %>% ggplot(aes(x=EnumNamePDM, y = perc, fill = LhCSICat)) +geom_bar(position="fill", stat = "identity") +theme_minimal() +theme(axis.text.x = element_text(angle = 90)) +scale_fill_manual(values=LHCS_colors) + facet_wrap(. ~ ADMIN1Name, scales = "free") +labs(x = "", y = "") +theme(axis.text.x=element_blank()) +scale_y_continuous(labels = scales::percent)
 
 ```
 
