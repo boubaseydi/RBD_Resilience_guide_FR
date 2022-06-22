@@ -7,6 +7,6 @@ bookdown::gitbook:
         <li><a href="./"></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/WFP-VAM/RBD_Resilience_guide_FR/blob/main/%s
+    edit: https://github.com/WFP-VAM/RBD_Resilience_guide_FR/%s
     download: ["pdf", "epub"]
     number_sections: false
